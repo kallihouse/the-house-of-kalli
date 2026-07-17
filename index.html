@@ -38,7 +38,7 @@
       </header>
 
       <nav class="rooms" aria-label="Choose an experience">
-        <a class="room" href="#booking">
+        <a class="room" href="#rates">
           <span class="room-number">01</span>
           <span class="room-copy">
             <strong>Request a Booking</strong>
@@ -99,6 +99,56 @@
     <section class="threshold" aria-label="Before we begin">
       <p class="eyebrow">BEFORE WE BEGIN</p>
       <p>Tell me enough to make<br>the conversation worth having.</p>
+    </section>
+
+    <section id="rates" class="rates" aria-labelledby="rates-title">
+      <header class="rates-intro">
+        <p class="eyebrow">SERVICES · RATES · TRAVEL</p>
+        <h2 id="rates-title">Choose your<br>experience.</h2>
+        <p>Protected experiences. Thoughtfully arranged.</p>
+      </header>
+
+      <div class="rates-content">
+        <div class="rate-list" aria-label="Service rates">
+          <div class="rate-row"><span>30 minutes</span><strong>$450</strong><small>PSE quickie</small></div>
+          <div class="rate-row"><span>1 hour</span><strong>$700</strong><small>PSE</small></div>
+          <div class="rate-row"><span>1 hour</span><strong>$800</strong><small>Kinky PSE · anal, rimming, fisting &amp; hardcore</small></div>
+          <div class="rate-row"><span>1 hour</span><strong>From $900</strong><small>BDSM · kinks, dominant or submissive dynamics</small></div>
+          <div class="rate-row"><span>90 minutes</span><strong>$1,000</strong><small>MMF or MFF booking · arranged by request</small></div>
+          <div class="rate-row featured-rate"><span>10 hours</span><strong>From $4,500</strong><small>Overnight · includes kinky PSE within mutually agreed boundaries</small></div>
+        </div>
+
+        <div class="rate-details">
+          <article>
+            <p class="detail-number">01</p>
+            <h3>Protected, always.</h3>
+            <p>All services are protected and include BBBJ.</p>
+          </article>
+          <article>
+            <p class="detail-number">02</p>
+            <h3>Outcall travel</h3>
+            <p>Calculated from my incall location on the date of your booking. Return transport and travel time are included.</p>
+            <ul>
+              <li><span>Up to 10 km</span><strong>+$100</strong></li>
+              <li><span>10–20 km</span><strong>+$150</strong></li>
+              <li><span>20–40 km</span><strong>+$250</strong></li>
+              <li><span>Over 40 km</span><strong>Quoted individually</strong></li>
+            </ul>
+          </article>
+          <article>
+            <p class="detail-number">03</p>
+            <h3>Fly me to you</h3>
+            <p>Available for bookings in other cities with a four-hour minimum. Return flights, private accommodation and transfers are additional and paid in advance.</p>
+          </article>
+          <article>
+            <p class="detail-number">04</p>
+            <h3>Deposit</h3>
+            <p>A 25% deposit is required from every new client. A booking is not confirmed until the deposit is received.</p>
+          </article>
+        </div>
+
+        <a class="rates-continue" href="#booking"><span>CONTINUE TO BOOKING REQUEST</span><span aria-hidden="true">→</span></a>
+      </div>
     </section>
 
     <section id="booking" class="booking" aria-labelledby="booking-title">
@@ -191,7 +241,10 @@
                 <option>1 hour</option>
                 <option>90 minutes</option>
                 <option>2 hours</option>
-                <option>3+ hours</option>
+                <option>3 hours</option>
+                <option>4 hours</option>
+                <option>10-hour overnight</option>
+                <option>Longer experience — please quote</option>
               </select>
             </label>
             <label>
@@ -200,17 +253,22 @@
                 <option value="" selected disabled>Choose</option>
                 <option>Incall</option>
                 <option>Outcall</option>
+                <option>Fly me to you</option>
                 <option>I'm flexible</option>
               </select>
             </label>
           </div>
+          <label class="destination-field" id="destination-field" hidden>
+            <span>Destination suburb, postcode or city</span>
+            <input type="text" name="destination" maxlength="120" autocomplete="address-level2">
+          </label>
         </fieldset>
 
         <fieldset>
           <legend><span>04</span> Before you knock</legend>
           <label class="check-row">
             <input type="checkbox" name="rates_read" required>
-            <span>I have read and understand Kalli's rates.</span>
+            <span>I have read and understand <a href="#rates">Kalli's rates and travel fees</a>.</span>
           </label>
           <label class="check-row">
             <input type="checkbox" name="deposit_agreed" required>

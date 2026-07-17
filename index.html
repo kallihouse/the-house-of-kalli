@@ -87,6 +87,11 @@
       <a class="back-door" href="#house-title">← Front door</a>
     </section>
 
+    <section class="threshold" aria-label="Before we begin">
+      <p class="eyebrow">BEFORE WE BEGIN</p>
+      <p>Tell me enough to make<br>the conversation worth having.</p>
+    </section>
+
     <section id="booking" class="booking" aria-labelledby="booking-title">
       <header class="booking-intro">
         <a class="room-back" href="#inside">← The rooms</a>
@@ -109,9 +114,21 @@
             </label>
           </div>
           <label>
-            <span>Mobile number</span>
-            <input type="tel" name="phone" autocomplete="tel" required>
+            <span>Mobile number <em>Optional</em></span>
+            <input type="tel" name="phone" autocomplete="tel">
           </label>
+          <div class="contact-choice" role="group" aria-labelledby="contact-choice-label">
+            <p id="contact-choice-label">How should we continue?</p>
+            <label class="choice-row">
+              <input type="radio" name="contact_preference" value="text_me" required>
+              <span>You may text me on the number above.</span>
+            </label>
+            <label class="choice-row">
+              <input type="radio" name="contact_preference" value="i_will_message">
+              <span>I'll message you after I submit this.</span>
+            </label>
+            <small>If you'd rather not leave a number, that's completely fine. Message me afterwards and begin with “Booking request — [the same name or alias used above]” so I can match you to your request.</small>
+          </div>
         </fieldset>
 
         <fieldset>

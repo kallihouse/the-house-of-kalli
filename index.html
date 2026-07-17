@@ -86,5 +86,106 @@
 
       <a class="back-door" href="#house-title">← Front door</a>
     </section>
+
+    <section id="booking" class="booking" aria-labelledby="booking-title">
+      <header class="booking-intro">
+        <a class="room-back" href="#inside">← The rooms</a>
+        <p class="eyebrow">IN-PERSON EXPERIENCES</p>
+        <h2 id="booking-title">Request a<br>Booking</h2>
+        <p>Tell me enough to begin a real conversation.</p>
+      </header>
+
+      <form class="booking-form" id="booking-form" onsubmit="event.preventDefault(); document.getElementById('form-status').hidden = false;">
+        <fieldset>
+          <legend><span>01</span> Tell me about you</legend>
+          <div class="field-grid two-columns">
+            <label>
+              <span>Name or alias</span>
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Age</span>
+              <input type="number" name="age" min="18" inputmode="numeric" required>
+            </label>
+          </div>
+          <label>
+            <span>Mobile number</span>
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>02</span> Tell me what you're looking for</legend>
+          <label>
+            <span>What kind of experience are you hoping for?</span>
+            <textarea name="experience" rows="4" required></textarea>
+          </label>
+          <label>
+            <span>What caught your attention about me?</span>
+            <textarea name="connection" rows="3" required></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>03</span> When and where?</legend>
+          <div class="field-grid two-columns">
+            <label>
+              <span>Preferred date</span>
+              <input type="date" name="date" required>
+            </label>
+            <label>
+              <span>Preferred time</span>
+              <input type="time" name="time" required>
+            </label>
+          </div>
+          <div class="field-grid two-columns">
+            <label>
+              <span>Duration</span>
+              <select name="duration" required>
+                <option value="" selected disabled>Choose</option>
+                <option>1 hour</option>
+                <option>90 minutes</option>
+                <option>2 hours</option>
+                <option>3+ hours</option>
+              </select>
+            </label>
+            <label>
+              <span>Location</span>
+              <select name="location" required>
+                <option value="" selected disabled>Choose</option>
+                <option>Incall</option>
+                <option>Outcall</option>
+                <option>I'm flexible</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span>04</span> Before you knock</legend>
+          <label class="check-row">
+            <input type="checkbox" name="rates_read" required>
+            <span>I have read and understand Kalli's rates.</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="deposit_agreed" required>
+            <span>I understand that a deposit is required to confirm a booking.</span>
+          </label>
+          <label>
+            <span>Anything else you'd like me to know? <em>Optional</em></span>
+            <textarea name="notes" rows="3"></textarea>
+          </label>
+        </fieldset>
+
+        <div class="submit-wrap">
+          <p>I read every request personally. If I think we're a good fit, I'll continue the conversation with you directly.</p>
+          <button type="submit">
+            <span>SEND MY REQUEST</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-status" id="form-status" hidden>The form is designed and ready. Submission delivery will be connected next.</p>
+        </div>
+      </form>
+    </section>
   </body>
 </html>

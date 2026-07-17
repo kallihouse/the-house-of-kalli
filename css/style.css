@@ -136,7 +136,7 @@ h1 {
   font-style: italic;
 }
 
-.rooms { border-top: 1px solid var(--line); }
+.rooms { border-top: 0; }
 
 .room {
   display: grid;
@@ -146,7 +146,7 @@ h1 {
   min-height: 105px;
   padding: 18px 4px;
   color: var(--paper);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(242, 240, 236, .2);
   text-decoration: none;
   transition: padding .3s ease, background-color .3s ease;
 }
@@ -192,6 +192,26 @@ h1 {
   text-transform: uppercase;
 }
 
+.threshold {
+  display: grid;
+  align-content: center;
+  min-height: 48svh;
+  padding: clamp(70px, 9vw, 150px);
+  color: #11110f;
+  background: #ddd9d1;
+}
+
+.threshold .eyebrow { color: #6c6963; }
+
+.threshold > p:last-child {
+  max-width: 1050px;
+  margin: 30px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(48px, 6.7vw, 108px);
+  font-weight: 400;
+  line-height: .92;
+}
+
 .booking {
   display: grid;
   grid-template-columns: minmax(320px, .75fr) minmax(560px, 1.25fr);
@@ -234,13 +254,13 @@ h1 {
   line-height: 1.35;
 }
 
-.booking-form { border-top: 1px solid var(--line); }
+.booking-form { border-top: 0; }
 
 .booking-form fieldset {
   margin: 0;
   padding: 44px 0 52px;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(242, 240, 236, .2);
 }
 
 .booking-form legend {
@@ -313,6 +333,50 @@ h1 {
   gap: 14px;
   margin-bottom: 22px;
   cursor: pointer;
+}
+
+.contact-choice {
+  margin-top: 38px;
+  padding: 28px 0 4px;
+  border-top: 1px solid rgba(242, 240, 236, .14);
+}
+
+.contact-choice > p {
+  margin: 0 0 22px;
+  color: #bab7b1;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.choice-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 14px;
+  margin-bottom: 17px;
+  cursor: pointer;
+}
+
+.choice-row input {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: #dedbd5;
+}
+
+.choice-row span {
+  color: #d1cec8;
+  font: 400 16px/1.4 "Cormorant Garamond", Georgia, serif;
+}
+
+.contact-choice small {
+  display: block;
+  max-width: 620px;
+  margin-top: 24px;
+  color: #8f8c86;
+  font-size: 10px;
+  line-height: 1.7;
 }
 
 .check-row input {
@@ -404,6 +468,13 @@ h1 {
   .room-copy strong { font-size: 26px; }
   .room-copy small { font-size: 8px; line-height: 1.5; }
   .back-door { left: 28px; bottom: 28px; }
+
+  .threshold {
+    min-height: 42svh;
+    padding: 70px 28px;
+  }
+
+  .threshold > p:last-child { font-size: clamp(44px, 14vw, 66px); }
 
   .booking {
     display: block;

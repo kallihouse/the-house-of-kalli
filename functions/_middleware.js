@@ -1,4 +1,4 @@
-const OFFICE_PATHS = new Set(['/office', '/office.html']);
+const OFFICE_PATHS = new Set(['/office', '/office.html', '/guests', '/guests.html']);
 const COOKIE_NAME = 'kalli_office_session';
 const SESSION_SECONDS = 60 * 60 * 12;
 
@@ -51,7 +51,7 @@ const hasValidSession = async (request, secret) => {
   return safeEqual(suppliedSignature, expectedSignature);
 };
 
-const loginPage = (message = '') => new Response(`<!doctype html>
+const loginPage = (message = '', returnPath = '/office') => new Response(`<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -75,7 +75,7 @@ const loginPage = (message = '') => new Response(`<!doctype html>
     <p class="eyebrow">THE HOUSE OFFICE</p>
     <h1>Welcome back, Kalli.</h1>
     <p>Enter your private office password to continue.</p>
-    <form method="post" action="/office">
+    <form method="post" action="${returnPath}">
       <label><span>Office password</span><input type="password" name="password" autocomplete="current-password" autofocus required></label>
       <button type="submit">ENTER THE OFFICE</button>
       ${message ? `<div class="error" role="alert">${message}</div>` : ''}
@@ -97,22 +97,24 @@ const loginPage = (message = '') => new Response(`<!doctype html>
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
-  if (!OFFICE_PATHS.has(url.pathname)) return context.next();
+  const isOfficePage = OFFICE_PATHS.has(url.pathname);
+  const isOfficeApi = url.pathname.startsWith('/api/office-');
+  if (!isOfficePage && !isOfficeApi) return context.next();
 
   const secret = context.env.VAULT_ADMIN_SECRET;
   if (!secret) return new Response('The House Office password has not been configured.', { status: 503 });
 
-  if (context.request.method === 'POST') {
+  if (isOfficePage && context.request.method === 'POST') {
     let submitted = '';
     try {
       const form = await context.request.formData();
       submitted = String(form.get('password') || '');
     } catch {
-      return loginPage('Please try again.');
+      return loginPage('Please try again.', url.pathname);
     }
 
     if (!safeEqual(submitted, secret)) {
-      return loginPage('That password was not recognised.');
+      return loginPage('That password was not recognised.', url.pathname);
     }
 
     const expires = Math.floor(Date.now() / 1000) + SESSION_SECONDS;
@@ -120,14 +122,14 @@ export async function onRequest(context) {
     return new Response(null, {
       status: 303,
       headers: {
-        Location: '/office',
+        Location: url.pathname === '/guests' || url.pathname === '/guests.html' ? '/guests' : '/office',
         'Cache-Control': 'no-store',
         'Set-Cookie': `${COOKIE_NAME}=${token}; Path=/; Max-Age=${SESSION_SECONDS}; HttpOnly; Secure; SameSite=Strict`,
       },
     });
   }
 
-  if (context.request.method !== 'GET' && context.request.method !== 'HEAD') {
+  if (isOfficePage && context.request.method !== 'GET' && context.request.method !== 'HEAD') {
     return new Response('Method not allowed.', { status: 405, headers: { Allow: 'GET, HEAD, POST' } });
   }
 
@@ -140,5 +142,12 @@ export async function onRequest(context) {
     return secured;
   }
 
-  return loginPage();
+  if (isOfficeApi) {
+    return Response.json({ error: 'Your Office session has expired.' }, {
+      status: 401,
+      headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
+    });
+  }
+
+  return loginPage('', url.pathname);
 }

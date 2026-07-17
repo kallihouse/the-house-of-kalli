@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Guests | The House Office</title>
+  <link rel="stylesheet" href="css/office.css">
+  <link rel="stylesheet" href="css/guests.css">
+</head>
+<body>
+  <div class="office-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">K</div><div><span>THE HOUSE OF</span><strong>KALLI</strong></div></div>
+      <button class="mobile-close" data-close-menu aria-label="Close menu">×</button>
+      <nav aria-label="House Office navigation">
+        <p class="nav-label">THE HOUSE</p>
+        <a class="nav-item" href="office.html"><span class="icon">⌂</span><span>House Office</span></a>
+        <a class="nav-item active" href="guests.html"><span class="icon">♙</span><span>Guests</span></a>
+        <a class="nav-item" href="#"><span class="icon">▣</span><span>Collections</span></a>
+        <a class="nav-item" href="#"><span class="icon">◇</span><span>Orders</span></a>
+        <a class="nav-item" href="#"><span class="icon">□</span><span>Visits</span></a>
+        <a class="nav-item" href="#"><span class="icon">✉</span><span>Correspondence</span></a>
+        <a class="nav-item" href="#"><span class="icon">▤</span><span>Journal</span></a>
+      </nav>
+      <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon">⚙</span><span>Settings</span></a><div class="hostess-card"><div class="avatar">K</div><div><strong>Kalli</strong><span>Hostess</span></div><span>›</span></div></div>
+    </aside>
+    <button class="backdrop" data-close-menu aria-label="Close navigation"></button>
+
+    <main class="main-content">
+      <header class="topbar"><button class="mobile-menu" data-open-menu aria-label="Open menu">☰</button><span class="mobile-title">Guests</span><span class="secure-label">PRIVATE OFFICE</span></header>
+      <div class="page-wrap guests-wrap">
+        <section class="guests-heading">
+          <div><p class="eyebrow">THE HOUSE OFFICE</p><h1>Guests</h1><p>Every person welcomed into the House, kept together discreetly.</p></div>
+          <button class="primary-button" id="add-guest">＋ ADD A GUEST</button>
+        </section>
+
+        <section class="guest-summary" aria-label="Guest overview">
+          <div><span>ALL GUESTS</span><strong id="total-guests">—</strong></div>
+          <div><span>COLLECTORS</span><strong id="total-collectors">—</strong></div>
+          <div><span>RETURNING GUESTS</span><strong id="total-returning">—</strong></div>
+          <div><span>ADDED THIS MONTH</span><strong id="total-new">—</strong></div>
+        </section>
+
+        <section class="guest-directory">
+          <div class="directory-tools">
+            <label class="search-box"><span>⌕</span><input id="guest-search" type="search" placeholder="Search guests, tags or contact details" autocomplete="off"></label>
+            <select id="guest-filter" aria-label="Filter guests"><option value="all">All guests</option><option value="collectors">Collectors</option><option value="returning">Returning guests</option></select>
+          </div>
+          <div class="directory-status" id="directory-status">Opening the guest book…</div>
+          <div class="guest-list" id="guest-list" hidden></div>
+          <div class="empty-state" id="empty-state" hidden><div class="empty-mark">K</div><h2>The guest book is waiting.</h2><p>Add your first guest whenever you’re ready.</p><button class="secondary-button" data-empty-add>ADD FIRST GUEST</button></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="guest-modal" hidden>
+    <button class="modal-backdrop" data-close-modal aria-label="Close guest form"></button>
+    <section class="guest-sheet" role="dialog" aria-modal="true" aria-labelledby="guest-form-title">
+      <div class="sheet-heading"><div><p class="eyebrow">GUEST RECORD</p><h2 id="guest-form-title">Add a guest</h2></div><button data-close-modal aria-label="Close">×</button></div>
+      <form id="guest-form">
+        <input type="hidden" name="id">
+        <label class="full"><span>Name or private alias *</span><input name="display_name" maxlength="80" required autocomplete="off"></label>
+        <div class="form-row"><label><span>Preferred contact</span><select name="contact_method"><option value="none">None</option><option value="email">Email</option><option value="sms">SMS</option><option value="whatsapp">WhatsApp</option></select></label><label><span>Contact detail</span><input name="contact_value" maxlength="150" autocomplete="off"></label></div>
+        <div class="form-row"><label><span>Birthday (optional)</span><input name="birthday" type="date"></label><label><span>Tags</span><input name="tags" placeholder="VIP, Collector, Sydney" maxlength="250"></label></div>
+        <label class="collection-check"><input type="checkbox" name="private_collection"><span><strong>Kalli’s Private Collection</strong><small>This guest has created private access.</small></span></label>
+        <label class="full"><span>Private notes</span><textarea name="notes" rows="6" maxlength="3000" placeholder="Anything helpful to remember…"></textarea></label>
+        <p class="form-message" id="form-message" hidden></p>
+        <div class="form-actions"><button type="button" class="secondary-button" data-close-modal>CANCEL</button><button type="submit" class="primary-button">SAVE GUEST</button></div>
+      </form>
+    </section>
+  </div>
+  <script src="js/guests.js"></script>
+</body>
+</html>

@@ -1,44 +1,5 @@
-(function () {
-  const sidebar = document.getElementById('sidebar');
-  const toast = document.getElementById('toast');
-  let toastTimer;
-
-  document.querySelector('[data-open-menu]').addEventListener('click', function () {
-    document.body.classList.add('menu-open');
-  });
-
-  document.querySelectorAll('[data-close-menu]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      document.body.classList.remove('menu-open');
-    });
-  });
-
-  document.querySelectorAll('[data-action]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      clearTimeout(toastTimer);
-      toast.textContent = button.dataset.action + '.';
-      toast.classList.add('show');
-      toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
-    });
-  });
-
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      document.querySelectorAll('.nav-item').forEach(function (item) { item.classList.remove('active'); });
-      link.classList.add('active');
-      document.body.classList.remove('menu-open');
-      clearTimeout(toastTimer);
-      toast.textContent = link.textContent.trim().replace(/[0-9]+$/, '') + ' is ready for the next build.';
-      toast.classList.add('show');
-      toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
-    });
-  });
-
-  const now = new Date();
-  const hour = now.getHours();
-  document.getElementById('greeting').textContent = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
-  document.getElementById('day-name').textContent = new Intl.DateTimeFormat('en-AU', { weekday: 'long' }).format(now);
-  document.getElementById('date-name').textContent = new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'long' }).format(now);
-  document.getElementById('year').textContent = now.getFullYear();
-})();
+(()=>{const money=c=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD',maximumFractionDigits:0}).format(Number(c||0)/100);const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));const icon={order:'◇',visit:'□',letter:'✉',journal:'▤',finance:'$'};const now=new Date(),hour=now.getHours();document.querySelector('#greeting').textContent=hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';document.querySelector('#day-name').textContent=new Intl.DateTimeFormat('en-AU',{weekday:'long'}).format(now);document.querySelector('#date-name').textContent=new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long'}).format(now);document.querySelector('#year').textContent=now.getFullYear();document.querySelector('[data-open-menu]').addEventListener('click',()=>document.body.classList.add('menu-open'));document.querySelectorAll('[data-close-menu]').forEach(b=>b.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+const when=value=>{if(!value)return'';const date=new Date(String(value).replace(' ','T')+'Z'),today=new Date();if(date.toDateString()===today.toDateString())return new Intl.DateTimeFormat('en-AU',{hour:'numeric',minute:'2-digit'}).format(date);return new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short'}).format(date)};const time=value=>{const [h,m]=String(value).split(':').map(Number),suffix=h>=12?'PM':'AM';return`${h%12||12}:${String(m).padStart(2,'0')}<span>${suffix}</span>`};
+function setCount(id,value){const el=document.querySelector(id);el.textContent=value;el.closest('.attention-card')?.classList.toggle('is-clear',!value)}function render(data){const c=data.counts;setCount('#pending-count',c.pendingPayments);setCount('#delivery-count',c.paidOrders);setCount('#visit-count',c.upcomingVisits);setCount('#letter-count',c.unreadLetters);const total=c.pendingPayments+c.paidOrders+c.upcomingVisits+c.unreadLetters;document.querySelector('#attention-total').textContent=total?`${total} ${total===1?'thing':'things'} waiting`:'The House is settled';document.querySelector('#house-message').textContent=total?'The House has been busy while you were away.':'Everything is quiet and in order.';const nav=document.querySelector('#nav-unread'),header=document.querySelector('#header-unread');nav.hidden=header.hidden=!c.unreadLetters;nav.textContent=header.textContent=c.unreadLetters;const income=data.finances.income,expenses=data.finances.expenses;document.querySelector('#month-income').textContent=money(income);document.querySelector('#month-expenses').textContent=money(expenses);document.querySelector('#month-net').textContent=money(income-expenses);
+const activity=document.querySelector('#activity-list');activity.innerHTML=data.activity.length?data.activity.map(a=>`<div class="activity-item"><span class="activity-icon ${esc(a.kind)}">${icon[a.kind]||'·'}</span><span class="activity-copy"><strong>${esc(a.title)}</strong><small>${esc(a.detail)}</small></span><time>${esc(when(a.happened_at))}</time></div>`).join(''):'<div class="empty-live">No activity yet. The House is ready when you are.</div>';const schedule=document.querySelector('#schedule-list');schedule.innerHTML=data.schedule.length?data.schedule.map((v,i)=>`${i?'<div class="schedule-divider"></div>':''}<div class="schedule-item"><time>${time(v.start_time)}</time><i></i><div><strong>${esc(v.guest_name)}</strong><span>${esc(v.location||`${v.duration_minutes} minutes`)}</span></div></div>`).join(''):'<div class="schedule-empty">Nothing is scheduled for today.</div>'}
+async function load(){try{const r=await fetch('/api/office-dashboard');if(r.status===401){location.href='/office';return}const data=await r.json();if(!r.ok)throw Error(data.error||'The dashboard could not be opened.');render(data)}catch(e){document.querySelector('#house-message').textContent='The House could not refresh its live information.';document.querySelector('#dashboard-error').textContent=e.message}}load()})();

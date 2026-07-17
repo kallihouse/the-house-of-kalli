@@ -1,0 +1,165 @@
+:root {
+  color-scheme: dark;
+  --ink: #080808;
+  --paper: #f2f0ec;
+  --muted: #aaa7a1;
+  --line: rgba(242, 240, 236, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.front-door {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(420px, 0.94fr);
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.portrait {
+  position: relative;
+  min-height: 100svh;
+  background: #242424 url("../images/hero-placeholder.svg") center 34% / cover no-repeat;
+  filter: grayscale(1);
+}
+
+.portrait-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.12), transparent 55%, rgba(0,0,0,.48)),
+    linear-gradient(0deg, rgba(0,0,0,.3), transparent 42%);
+}
+
+.welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding: clamp(48px, 7vw, 118px);
+}
+
+.welcome-inner { width: min(100%, 620px); }
+
+.eyebrow,
+.location {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .38em;
+}
+
+h1 {
+  margin: 22px 0 24px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(58px, 6.5vw, 108px);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: .015em;
+}
+
+.arrival {
+  margin: 0 0 clamp(50px, 9vh, 88px);
+  color: #d9d6d0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(26px, 2.2vw, 38px);
+  font-style: italic;
+}
+
+.enter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 335px);
+  padding: 18px 2px;
+  color: var(--paper);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .31em;
+  transition: border-color .3s ease, padding .3s ease;
+}
+
+.enter:hover,
+.enter:focus-visible {
+  padding-inline: 10px;
+  border-color: var(--paper);
+  outline: none;
+}
+
+.arrow { font-size: 21px; font-weight: 300; letter-spacing: 0; }
+
+.location {
+  position: absolute;
+  right: clamp(28px, 4vw, 70px);
+  bottom: 30px;
+  letter-spacing: .28em;
+}
+
+.inside {
+  display: grid;
+  place-content: center;
+  min-height: 100svh;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.inside h2 {
+  margin: 18px 0 10px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(54px, 8vw, 104px);
+  font-weight: 400;
+}
+
+.inside p:not(.eyebrow) { color: var(--muted); }
+.inside a { margin-top: 34px; color: var(--paper); text-underline-offset: 5px; }
+
+@media (max-width: 760px) {
+  .front-door {
+    position: relative;
+    display: block;
+    min-height: 100svh;
+  }
+
+  .portrait {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    background-position: center 28%;
+  }
+
+  .portrait-shade {
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.9) 3%, rgba(0,0,0,.32) 64%, rgba(0,0,0,.12)),
+      linear-gradient(90deg, rgba(0,0,0,.28), transparent 60%);
+  }
+
+  .welcome {
+    z-index: 1;
+    align-items: flex-end;
+    min-height: 100svh;
+    padding: 52px 28px 72px;
+  }
+
+  h1 { font-size: clamp(55px, 18vw, 82px); }
+  .arrival { margin-bottom: 38px; }
+  .location { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .enter { transition: none; }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a4a4a"/>
+      <stop offset=".52" stop-color="#202020"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <radialGradient id="light" cx="35%" cy="25%" r="55%">
+      <stop offset="0" stop-color="#bcbcbc" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#111" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <rect width="1200" height="1600" fill="url(#light)"/>
+  <path d="M90 1600C150 1100 205 740 435 480c80-90 174-117 260-45 119 100 105 290 205 435 71 104 164 170 230 250v480z" fill="#151515"/>
+  <circle cx="548" cy="390" r="146" fill="#1a1a1a"/>
+  <text x="600" y="1420" fill="#aaa" font-family="Arial, sans-serif" font-size="21" text-anchor="middle" letter-spacing="6">REPLACE WITH KALLI'S PORTRAIT</text>
+</svg>

@@ -9,7 +9,7 @@ const renderPending = (data) => {
   content.innerHTML = `
     <p class="waiting-name">Request received for ${escapeHtml(data.name)}.</p>
     <h2>You're in the waiting room.</h2>
-    <p>I haven't opened this conversation yet. You can return using this private link to check its status.</p>
+    <p>I haven't opened this conversation yet. Save this page, or return through the front door later using your private password.</p>
     <div class="locked-room"><span>Conversation locked</span><span aria-hidden="true">○</span></div>
   `;
 };

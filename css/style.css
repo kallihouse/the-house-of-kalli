@@ -721,6 +721,142 @@ h1 {
 .digital-form .submit-wrap .form-status { color: var(--muted); }
 .digital-payment-check { margin-top: 38px; }
 
+.vault {
+  display: grid;
+  grid-template-columns: minmax(300px, .68fr) minmax(640px, 1.32fr);
+  align-items: start;
+  gap: clamp(70px, 10vw, 170px);
+  min-height: 100svh;
+  padding: clamp(74px, 8vw, 132px);
+  color: #171613;
+  background: #dedad2;
+}
+
+.vault-intro {
+  position: sticky;
+  top: 90px;
+}
+
+.vault .room-back { color: #67635d; }
+
+.vault .eyebrow { color: #77736d; }
+
+.vault h2 {
+  margin: 24px 0;
+  font: 400 clamp(64px, 7vw, 112px)/.84 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-intro > p:last-child {
+  max-width: 330px;
+  color: #65615b;
+  font: italic 400 24px/1.35 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-opening {
+  max-width: 670px;
+  margin: 0 0 64px;
+  font: 400 clamp(31px, 3.2vw, 50px)/1.12 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(20, 19, 17, .3);
+}
+
+.vault-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  padding: 34px 34px 32px 0;
+  border-bottom: 1px solid rgba(20, 19, 17, .25);
+}
+
+.vault-card:nth-child(even) {
+  padding-right: 0;
+  padding-left: 34px;
+  border-left: 1px solid rgba(20, 19, 17, .25);
+}
+
+.vault-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: #77736d;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.vault-card-top small {
+  font: inherit;
+  letter-spacing: .1em;
+}
+
+.vault-card h3 {
+  margin: 52px 0 18px;
+  font: 400 clamp(38px, 3.4vw, 56px)/.95 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-card > p {
+  max-width: 410px;
+  margin: 0 0 34px;
+  color: #57534e;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.vault-card > strong {
+  display: block;
+  margin-top: auto;
+  font: 400 34px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-action {
+  display: block;
+  margin-top: 24px;
+  padding: 17px 0;
+  color: #6f6b65;
+  border-top: 1px solid rgba(20, 19, 17, .25);
+  border-bottom: 1px solid rgba(20, 19, 17, .25);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .19em;
+}
+
+.vault-complete {
+  grid-column: 1 / -1;
+  min-height: 410px;
+  padding: 48px !important;
+  color: var(--paper);
+  background: #0b0b0b;
+  border-left: 0 !important;
+}
+
+.vault-complete .vault-card-top,
+.vault-complete > p { color: var(--muted); }
+
+.vault-complete h3 {
+  margin-top: 64px;
+  font-size: clamp(54px, 6vw, 92px);
+}
+
+.vault-complete > p { max-width: 650px; }
+
+.vault-complete .vault-action {
+  color: #c8c4bd;
+  border-color: rgba(242, 240, 236, .28);
+}
+
+.vault-note {
+  margin: 36px 0 0;
+  color: #77736d;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .08em;
+}
+
 .waiting-page { min-height: 100svh; background: #0b0b0b; }
 
 .waiting-room {
@@ -855,6 +991,18 @@ h1 {
   }
 
   .digital h2 { font-size: clamp(62px, 9vw, 100px); }
+
+  .vault {
+    grid-template-columns: 1fr;
+    gap: 68px;
+  }
+
+  .vault-intro {
+    position: static;
+    max-width: 680px;
+  }
+
+  .vault h2 { font-size: clamp(62px, 9vw, 100px); }
 }
 
 @media (max-width: 760px) {
@@ -945,6 +1093,27 @@ h1 {
   .video-rate { display: block; }
   .video-prices { width: 100%; margin-top: 30px; }
   .digital-form { margin-top: 60px; }
+
+  .vault { display: block; padding: 72px 28px 90px; }
+  .vault-intro { position: static; margin-bottom: 68px; }
+  .vault h2 { font-size: clamp(58px, 18vw, 84px); }
+  .vault-opening { margin-bottom: 50px; font-size: clamp(34px, 11vw, 50px); }
+  .vault-grid { grid-template-columns: 1fr; }
+  .vault-card,
+  .vault-card:nth-child(even) {
+    min-height: 0;
+    padding: 36px 0 40px;
+    border-left: 0;
+  }
+  .vault-card h3 { margin-top: 38px; font-size: 48px; }
+  .vault-card > p { font-size: 16px; }
+  .vault-card > strong { margin-top: 18px; }
+  .vault-complete {
+    grid-column: auto;
+    margin-top: 24px;
+    padding: 36px 26px 40px !important;
+  }
+  .vault-complete h3 { margin-top: 50px; font-size: clamp(54px, 17vw, 76px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

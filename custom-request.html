@@ -25,8 +25,13 @@
     </div>
     <div class="fields">
       <label>Your name or private alias<input name="guest_name" required maxlength="100"></label>
-      <label>How should I contact you?<select name="contact_method"><option value="email">Email</option><option value="sms">SMS</option><option value="whatsapp">WhatsApp</option></select></label>
-      <label>Contact detail<input name="contact_value" required maxlength="200"></label>
+      <label>How should I reply?<select name="contact_method" id="contact-method"><option value="email">Email</option><option value="sms">SMS</option><option value="whatsapp">WhatsApp</option><option value="private_room">Private anonymous room</option></select></label>
+      <label id="contact-field">Contact detail<input name="contact_value" required maxlength="200"></label>
+      <div class="private-fields wide" id="private-fields" hidden>
+        <p><strong>Create your private-room password.</strong> You’ll need your reference number and this password to return. We cannot recover it for you.</p>
+        <label>Private password<input name="private_password" type="password" minlength="8" maxlength="128" autocomplete="new-password"></label>
+        <label>Confirm password<input name="private_password_confirm" type="password" minlength="8" maxlength="128" autocomplete="new-password"></label>
+      </div>
       <label>Name you want used in the content<input name="personal_name" maxlength="80"></label>
       <label>Preferred format or length<input name="format_details" maxlength="300" placeholder="For example: 5-minute video"></label>
       <label>Your budget<select name="budget_band" required><option value="">Choose one</option><option>$150–$249</option><option>$250–$499</option><option>$500–$999</option><option>$1,000+</option></select></label>
@@ -37,10 +42,12 @@
     <section class="terms">
       <h2>Before you ask</h2>
       <p>I do not accept requests involving minors or age-play, scat, blood, public acts, illegal activity, or anything outside my personal boundaries.</p>
+      <label><input type="checkbox" name="adult" required> <span>I confirm that I am at least 18 years old.</span></label>
       <label><input type="checkbox" name="terms" required> <span>I understand this is a request, not an automatic acceptance. The final quote is Kalli’s decision, a deposit is required before work begins, and one clarification round is included.</span></label>
     </section>
     <button type="submit">SEND MY REQUEST</button>
     <p id="message"></p>
+    <a class="return-link" href="custom-return.html">Already made an anonymous request? Return to your private room →</a>
   </form>
 </main>
 <script src="js/custom-request.js"></script>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Collections | The House Office</title>
+  <link rel="stylesheet" href="css/office.css">
+  <link rel="stylesheet" href="css/collections.css">
+</head>
+<body>
+  <div class="office-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">K</div><div><span>THE HOUSE OF</span><strong>KALLI</strong></div></div>
+      <button class="mobile-close" data-close-menu aria-label="Close menu">×</button>
+      <nav aria-label="House Office navigation">
+        <p class="nav-label">THE HOUSE</p>
+        <a class="nav-item" href="office.html"><span class="icon">⌂</span><span>House Office</span></a>
+        <a class="nav-item" href="guests.html"><span class="icon">♙</span><span>Guests</span></a>
+        <a class="nav-item active" href="collections.html"><span class="icon">▣</span><span>Collections</span></a>
+        <a class="nav-item" href="#"><span class="icon">◇</span><span>Orders</span></a>
+        <a class="nav-item" href="#"><span class="icon">□</span><span>Visits</span></a>
+        <a class="nav-item" href="#"><span class="icon">✉</span><span>Correspondence</span></a>
+        <a class="nav-item" href="#"><span class="icon">▤</span><span>Journal</span></a>
+      </nav>
+      <div class="sidebar-footer"><a class="nav-item" href="#"><span class="icon">⚙</span><span>Settings</span></a><div class="hostess-card"><div class="avatar">K</div><div><strong>Kalli</strong><span>Hostess</span></div><span>›</span></div></div>
+    </aside>
+    <button class="backdrop" data-close-menu aria-label="Close navigation"></button>
+    <main class="main-content">
+      <header class="topbar"><button class="mobile-menu" data-open-menu aria-label="Open menu">☰</button><span class="mobile-title">Collections</span><span class="secure-label">PRIVATE OFFICE</span></header>
+      <div class="page-wrap collections-wrap">
+        <section class="collections-heading">
+          <div><p class="eyebrow">THE HOUSE OFFICE</p><h1>Collections</h1><p>Manage the private links currently used to prepare each delivery.</p></div>
+          <button class="refresh-button" id="refresh-collections">↻ REFRESH LINKS</button>
+        </section>
+        <section class="link-overview">
+          <div><span>COLLECTIONS</span><strong id="collection-total">6</strong></div>
+          <div><span>READY TO DELIVER</span><strong id="collection-ready">—</strong></div>
+          <div><span>NEEDS A LINK</span><strong id="collection-missing">—</strong></div>
+          <p>Changing a link here updates every authorised order room that uses that collection.</p>
+        </section>
+        <div class="collection-status" id="collection-status">Opening the collection cabinet…</div>
+        <section class="collection-grid" id="collection-grid" hidden></section>
+      </div>
+    </main>
+  </div>
+  <div class="modal" id="collection-modal" hidden>
+    <button class="modal-backdrop" data-close-modal aria-label="Close"></button>
+    <section class="link-sheet" role="dialog" aria-modal="true" aria-labelledby="link-title">
+      <button class="sheet-close" data-close-modal aria-label="Close">×</button>
+      <p class="eyebrow">DELIVERY LINK</p><h2 id="link-title">Collection</h2><p class="sheet-intro">Paste the current private Dropbox link. Leave it blank only when you want to pause delivery.</p>
+      <form id="collection-form"><input type="hidden" name="code"><label><span>Current private link</span><input type="url" name="access_url" placeholder="https://www.dropbox.com/…" autocomplete="off"></label><p class="form-message" id="form-message" hidden></p><div class="form-actions"><button type="button" class="secondary-button" data-test-link>TEST LINK</button><button type="submit" class="primary-button">SAVE CURRENT LINK</button></div></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/collections.js"></script>
+</body>
+</html>

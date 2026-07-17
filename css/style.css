@@ -29,7 +29,7 @@ body {
 .portrait {
   position: relative;
   min-height: 100svh;
-  background: #242424 url("../images/hero-placeholder.svg") center 34% / cover no-repeat;
+  background: #242424 url("../images/hero.jpg") center 34% / cover no-repeat;
   filter: grayscale(1);
 }
 

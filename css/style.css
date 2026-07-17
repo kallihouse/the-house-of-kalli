@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
   color: var(--paper);
   background: var(--ink);
-  font-family: Inter, Arial, sans-serif;
+  font-family: "Jost", Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -198,8 +198,8 @@ h1 {
 .threshold {
   display: grid;
   align-content: center;
-  min-height: 48svh;
-  padding: clamp(70px, 9vw, 150px);
+  min-height: 34svh;
+  padding: clamp(58px, 7vw, 110px);
   color: #11110f;
   background: #ddd9d1;
 }
@@ -222,13 +222,13 @@ h1 {
   gap: clamp(70px, 10vw, 170px);
   min-height: 100svh;
   padding: clamp(74px, 8vw, 132px);
-  color: #151411;
-  background: #dedad2;
+  color: var(--paper);
+  background: #0b0b0b;
 }
 
 .rates-intro { position: sticky; top: 90px; }
 
-.rates .eyebrow { color: #6c6963; }
+.rates .eyebrow { color: var(--muted); }
 
 .rates h2 {
   margin: 24px 0;
@@ -240,11 +240,11 @@ h1 {
 
 .rates-intro > p:last-child {
   max-width: 330px;
-  color: #66625c;
+  color: var(--muted);
   font: italic 400 23px/1.35 "Cormorant Garamond", Georgia, serif;
 }
 
-.rate-list { border-top: 1px solid rgba(20, 19, 17, .35); }
+.rate-list { border-top: 1px solid rgba(242, 240, 236, .3); }
 
 .rate-row {
   display: grid;
@@ -252,11 +252,11 @@ h1 {
   align-items: baseline;
   gap: 24px;
   padding: 27px 2px;
-  border-bottom: 1px solid rgba(20, 19, 17, .25);
+  border-bottom: 1px solid rgba(242, 240, 236, .2);
 }
 
 .rate-row > span {
-  color: #726e67;
+  color: #8f8c86;
   font-size: 11px;
   letter-spacing: .13em;
   text-transform: uppercase;
@@ -266,32 +266,51 @@ h1 {
   font: 400 clamp(28px, 2.6vw, 42px)/1 "Cormorant Garamond", Georgia, serif;
 }
 
-.rate-row small { color: #57534d; font-size: 14px; line-height: 1.55; }
-.featured-rate { background: rgba(255, 255, 255, .22); padding-inline: 18px; }
+.rate-row small { color: #aaa7a1; font-size: 14px; line-height: 1.55; }
+.featured-rate { background: rgba(255, 255, 255, .035); padding-inline: 18px; }
 
 .rate-details { display: grid; grid-template-columns: 1fr 1fr; gap: 0 54px; margin-top: 70px; }
 
 .rate-details article {
   padding: 32px 0;
-  border-top: 1px solid rgba(20, 19, 17, .25);
+  border-top: 1px solid rgba(242, 240, 236, .2);
 }
 
-.detail-number { margin: 0 0 20px; color: #817d76; font-size: 10px; letter-spacing: .18em; }
+.detail-number { margin: 0 0 20px; color: #77746f; font-size: 10px; letter-spacing: .18em; }
 .rate-details h3 { margin: 0 0 14px; font: 400 30px/1.1 "Cormorant Garamond", Georgia, serif; }
 .rate-details article > p:last-child,
-.rate-details article > p:not(.detail-number) { margin: 0; color: #57534d; font-size: 15px; line-height: 1.7; }
+.rate-details article > p:not(.detail-number) { margin: 0; color: #aaa7a1; font-size: 15px; line-height: 1.7; }
 .rate-details ul { margin: 22px 0 0; padding: 0; list-style: none; }
-.rate-details li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid rgba(20, 19, 17, .15); font-size: 13px; }
+.rate-details li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid rgba(242, 240, 236, .14); font-size: 13px; }
 .rate-details li strong { font-weight: 500; text-align: right; }
+
+.rate-details .policy-card { grid-column: 1 / -1; }
+
+.policy-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 52px;
+  margin-top: 28px !important;
+}
+
+.policy-list li {
+  display: grid;
+  justify-content: stretch;
+  gap: 8px;
+  padding: 18px 0;
+}
+
+.policy-list li strong { color: #d8d5cf; font-size: 13px; letter-spacing: .05em; text-align: left; }
+.policy-list li span { color: #9e9b95; font-size: 14px; line-height: 1.6; }
 
 .rates-continue {
   display: flex;
   justify-content: space-between;
   margin-top: 48px;
   padding: 22px 2px;
-  color: #151411;
-  border-top: 1px solid rgba(20, 19, 17, .4);
-  border-bottom: 1px solid rgba(20, 19, 17, .4);
+  color: var(--paper);
+  border-top: 1px solid rgba(242, 240, 236, .35);
+  border-bottom: 1px solid rgba(242, 240, 236, .35);
   font-size: 12px;
   letter-spacing: .24em;
   text-decoration: none;
@@ -304,8 +323,11 @@ h1 {
   gap: clamp(70px, 10vw, 170px);
   min-height: 100svh;
   padding: clamp(74px, 8vw, 132px);
-  background: #10100f;
+  color: #151411;
+  background: #dedad2;
 }
+
+.booking .eyebrow { color: #6c6963; }
 
 .booking-intro {
   position: sticky;
@@ -315,7 +337,7 @@ h1 {
 .room-back {
   display: inline-block;
   margin-bottom: clamp(80px, 15vh, 150px);
-  color: var(--muted);
+  color: #6c6963;
   font-size: 11px;
   letter-spacing: .22em;
   text-decoration: none;
@@ -332,7 +354,7 @@ h1 {
 
 .booking-intro > p:last-child {
   max-width: 330px;
-  color: var(--muted);
+  color: #66625c;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 23px;
   font-style: italic;
@@ -345,13 +367,13 @@ h1 {
   margin: 0;
   padding: 44px 0 52px;
   border: 0;
-  border-bottom: 1px solid rgba(242, 240, 236, .2);
+  border-bottom: 1px solid rgba(20, 19, 17, .22);
 }
 
 .booking-form legend {
   width: 100%;
   margin-bottom: 38px;
-  color: var(--paper);
+  color: #151411;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 29px;
 }
@@ -359,8 +381,8 @@ h1 {
 .booking-form legend span {
   display: inline-block;
   width: 48px;
-  color: #77746f;
-  font-family: Inter, Arial, sans-serif;
+  color: #817d76;
+  font-family: "Jost", Arial, sans-serif;
   font-size: 11px;
   letter-spacing: .18em;
 }
@@ -379,7 +401,7 @@ h1 {
 }
 
 .booking-form label > span {
-  color: #bab7b1;
+  color: #5e5a54;
   font-size: 12px;
   letter-spacing: .12em;
   line-height: 1.5;
@@ -387,7 +409,7 @@ h1 {
 }
 
 .booking-form em {
-  color: #6f6c67;
+  color: #817d76;
   font-style: normal;
 }
 
@@ -396,10 +418,10 @@ h1 {
 .booking-form select {
   width: 100%;
   padding: 13px 0;
-  color: var(--paper);
+  color: #151411;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(242, 240, 236, .28);
+  border-bottom: 1px solid rgba(20, 19, 17, .32);
   border-radius: 0;
   font: 400 18px/1.5 "Cormorant Garamond", Georgia, serif;
   outline: none;
@@ -409,7 +431,7 @@ h1 {
 
 .booking-form input:focus,
 .booking-form textarea:focus,
-.booking-form select:focus { border-bottom-color: var(--paper); }
+.booking-form select:focus { border-bottom-color: #151411; }
 
 .check-row {
   display: grid;
@@ -423,12 +445,12 @@ h1 {
 .contact-choice {
   margin-top: 38px;
   padding: 28px 0 4px;
-  border-top: 1px solid rgba(242, 240, 236, .14);
+  border-top: 1px solid rgba(20, 19, 17, .15);
 }
 
 .contact-choice > p {
   margin: 0 0 22px;
-  color: #bab7b1;
+  color: #5e5a54;
   font-size: 12px;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -447,11 +469,11 @@ h1 {
   width: 16px;
   height: 16px;
   margin: 1px 0 0;
-  accent-color: #dedbd5;
+  accent-color: #151411;
 }
 
 .choice-row span {
-  color: #d1cec8;
+  color: #383631;
   font: 400 19px/1.45 "Cormorant Garamond", Georgia, serif;
 }
 
@@ -459,7 +481,7 @@ h1 {
   display: block;
   max-width: 620px;
   margin-top: 24px;
-  color: #8f8c86;
+  color: #66625c;
   font-size: 14px;
   line-height: 1.65;
 }
@@ -467,14 +489,14 @@ h1 {
 .password-fields {
   margin-top: 30px;
   padding: 30px 0 4px;
-  border-top: 1px solid rgba(242, 240, 236, .14);
+  border-top: 1px solid rgba(20, 19, 17, .15);
 }
 
 .password-fields[hidden] { display: none; }
 
 .password-fields > p {
   margin: 0 0 10px;
-  color: var(--paper);
+  color: #151411;
   font: 400 25px/1.3 "Cormorant Garamond", Georgia, serif;
 }
 
@@ -490,18 +512,18 @@ h1 {
   cursor: pointer;
 }
 
-.show-password input { width: 16px; height: 16px; accent-color: #dedbd5; }
+.show-password input { width: 16px; height: 16px; accent-color: #151411; }
 .show-password span { font-size: 10px !important; letter-spacing: .14em !important; }
 
 .check-row input {
   width: 16px;
   height: 16px;
   margin: 1px 0 0;
-  accent-color: #dedbd5;
+  accent-color: #151411;
 }
 
 .check-row span {
-  color: #d4d1cb !important;
+  color: #383631 !important;
   font: 400 23px/1.45 "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0 !important;
   text-transform: none !important;
@@ -514,7 +536,7 @@ h1 {
 .submit-wrap p {
   max-width: 500px;
   margin: 0 0 38px;
-  color: var(--muted);
+  color: #66625c;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 20px;
   font-style: italic;
@@ -526,20 +548,20 @@ h1 {
   justify-content: space-between;
   width: 100%;
   padding: 20px 2px;
-  color: var(--paper);
+  color: #151411;
   background: transparent;
   border: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(20, 19, 17, .35);
+  border-bottom: 1px solid rgba(20, 19, 17, .35);
   cursor: pointer;
-  font: 400 12px Inter, Arial, sans-serif;
+  font: 400 12px "Jost", Arial, sans-serif;
   letter-spacing: .28em;
 }
 
 .submit-wrap .form-status {
   margin-top: 28px;
-  color: #d3d0ca;
-  font-family: Inter, Arial, sans-serif;
+  color: #4f4c47;
+  font-family: "Jost", Arial, sans-serif;
   font-size: 13px;
   font-style: normal;
   letter-spacing: .12em;
@@ -645,7 +667,7 @@ h1 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   cursor: pointer;
-  font: 400 12px Inter, Arial, sans-serif;
+  font: 400 12px "Jost", Arial, sans-serif;
   letter-spacing: .25em;
 }
 
@@ -729,6 +751,7 @@ h1 {
   .rate-row strong { grid-column: 2; grid-row: 1; }
   .rate-row small { grid-column: 1 / -1; font-size: 15px; }
   .rate-details { grid-template-columns: 1fr; margin-top: 52px; }
+  .policy-list { grid-template-columns: 1fr; gap: 0; }
   .rates-continue { line-height: 1.5; }
 
   .booking {

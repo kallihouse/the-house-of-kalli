@@ -425,6 +425,67 @@ h1 {
   text-transform: uppercase;
 }
 
+.waiting-page { min-height: 100svh; background: #0b0b0b; }
+
+.waiting-room {
+  width: min(100% - 48px, 980px);
+  margin: 0 auto;
+  padding: clamp(70px, 10vw, 150px) 0 70px;
+}
+
+.waiting-room h1 {
+  margin: 28px 0 clamp(70px, 10vh, 120px);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(62px, 10vw, 126px);
+  font-weight: 400;
+  line-height: .82;
+}
+
+.waiting-content {
+  max-width: 720px;
+  padding: 45px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.waiting-content h2 {
+  margin: 14px 0 18px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(35px, 5vw, 58px);
+  font-weight: 400;
+}
+
+.waiting-content > p { color: var(--muted); line-height: 1.7; }
+.waiting-name { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+
+.locked-room {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 42px;
+  padding: 18px 2px;
+  color: #8f8c86;
+  border-top: 1px solid rgba(242, 240, 236, .18);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.waiting-warning {
+  max-width: 580px;
+  margin: 34px 0 70px;
+  color: #77746f;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.waiting-home { color: var(--muted); font-size: 9px; letter-spacing: .2em; text-decoration: none; text-transform: uppercase; }
+.message-list { display: grid; gap: 22px; margin-top: 34px; }
+.message { max-width: 78%; padding: 20px 22px; background: #171715; }
+.message.from-client { justify-self: end; background: #24221f; }
+.message small { color: #77746f; font-size: 8px; letter-spacing: .18em; }
+.message p { margin: 9px 0 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 19px; line-height: 1.5; }
+.waiting-note { margin-top: 30px; }
+
 @media (max-width: 760px) {
   .front-door {
     position: relative;

@@ -12,14 +12,11 @@ An upload-ready static landing page for Cloudflare Pages.
 
 ## Replace the placeholder portrait
 
-The landing page currently uses `images/hero-placeholder.svg`.
+The landing page uses `images/hero.jpg`.
 
 For the real portrait:
 
-1. Add the image to the `images` folder as `hero.jpg`.
-2. Open `css/style.css`.
-3. Find `hero-placeholder.svg` and replace it with `hero.jpg`.
-4. Commit both changes.
+To replace it later, upload a new image named `hero.jpg` into the `images` folder and overwrite the existing file.
 
 For best results, use a high-resolution portrait-oriented JPG. The CSS automatically crops it for desktop and mobile.
 
@@ -31,6 +28,7 @@ the-house-of-kalli/
 ├── css/
 │   └── style.css
 ├── images/
+│   ├── hero.jpg
 │   └── hero-placeholder.svg
 └── README.md
 ```

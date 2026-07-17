@@ -100,7 +100,7 @@
         <p>Tell me enough to begin a real conversation.</p>
       </header>
 
-      <form class="booking-form" id="booking-form" onsubmit="event.preventDefault(); document.getElementById('form-status').hidden = false;">
+      <form class="booking-form" id="booking-form">
         <fieldset>
           <legend><span>01</span> Tell me about you</legend>
           <div class="field-grid two-columns">
@@ -200,9 +200,10 @@
             <span>SEND MY REQUEST</span>
             <span aria-hidden="true">→</span>
           </button>
-          <p class="form-status" id="form-status" hidden>The form is designed and ready. Submission delivery will be connected next.</p>
+          <p class="form-status" id="form-status" hidden></p>
         </div>
       </form>
     </section>
+    <script src="js/site.js" defer></script>
   </body>
 </html>

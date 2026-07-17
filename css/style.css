@@ -55,7 +55,7 @@ body {
 .location {
   margin: 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: .38em;
 }
@@ -231,7 +231,7 @@ h1 {
   display: inline-block;
   margin-bottom: clamp(80px, 15vh, 150px);
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .22em;
   text-decoration: none;
   text-transform: uppercase;
@@ -276,7 +276,7 @@ h1 {
   width: 48px;
   color: #77746f;
   font-family: Inter, Arial, sans-serif;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: .18em;
 }
 
@@ -295,8 +295,8 @@ h1 {
 
 .booking-form label > span {
   color: #bab7b1;
-  font-size: 9px;
-  letter-spacing: .16em;
+  font-size: 12px;
+  letter-spacing: .12em;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -344,8 +344,8 @@ h1 {
 .contact-choice > p {
   margin: 0 0 22px;
   color: #bab7b1;
-  font-size: 9px;
-  letter-spacing: .16em;
+  font-size: 12px;
+  letter-spacing: .12em;
   text-transform: uppercase;
 }
 
@@ -367,7 +367,7 @@ h1 {
 
 .choice-row span {
   color: #d1cec8;
-  font: 400 16px/1.4 "Cormorant Garamond", Georgia, serif;
+  font: 400 19px/1.45 "Cormorant Garamond", Georgia, serif;
 }
 
 .contact-choice small {
@@ -375,8 +375,8 @@ h1 {
   max-width: 620px;
   margin-top: 24px;
   color: #8f8c86;
-  font-size: 10px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .check-row input {
@@ -386,7 +386,11 @@ h1 {
   accent-color: #dedbd5;
 }
 
-.check-row span { text-transform: none !important; }
+.check-row span {
+  font: 400 18px/1.45 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
 
 .submit-wrap { padding: 48px 0 20px; }
 
@@ -411,7 +415,7 @@ h1 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   cursor: pointer;
-  font: 400 10px Inter, Arial, sans-serif;
+  font: 400 12px Inter, Arial, sans-serif;
   letter-spacing: .28em;
 }
 
@@ -419,7 +423,7 @@ h1 {
   margin-top: 28px;
   color: #d3d0ca;
   font-family: Inter, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   font-style: normal;
   letter-spacing: .12em;
   text-transform: uppercase;

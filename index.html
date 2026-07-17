@@ -459,7 +459,7 @@
             <h3>Railed</h3>
             <p>Hard, explicit partnered scenes built around anal, rough play, MMF moments and young-bull encounters.</p>
             <strong>$249</strong>
-            <span class="vault-action">PURCHASE ACCESS · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="railed">PURCHASE ACCESS →</button>
           </article>
 
           <article class="vault-card">
@@ -470,7 +470,7 @@
             <h3>Good Girl</h3>
             <p>Submission, training, obedience and rough direction—from teasing instructions to fully giving in.</p>
             <strong>$299</strong>
-            <span class="vault-action">PURCHASE ACCESS · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="good_girl">PURCHASE ACCESS →</button>
           </article>
 
           <article class="vault-card">
@@ -481,7 +481,7 @@
             <h3>Mouthful</h3>
             <p>Deep throat, face fucking, worship and mouth-focused play, including directed and dominant scenes.</p>
             <strong>$249</strong>
-            <span class="vault-action">PURCHASE ACCESS · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="mouthful">PURCHASE ACCESS →</button>
           </article>
 
           <article class="vault-card">
@@ -492,7 +492,7 @@
             <h3>Private Play</h3>
             <p>Solo pleasure, toys, fisting, squirting and intimate moments made for a closer look.</p>
             <strong>$299</strong>
-            <span class="vault-action">PURCHASE ACCESS · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="private_play">PURCHASE ACCESS →</button>
           </article>
 
           <article class="vault-card">
@@ -503,7 +503,7 @@
             <h3>Full Sessions</h3>
             <p>Long-form, uncut experiences with time to watch the dynamic unfold from beginning to end.</p>
             <strong>$349</strong>
-            <span class="vault-action">PURCHASE ACCESS · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="full_sessions">PURCHASE ACCESS →</button>
           </article>
 
           <article class="vault-card vault-bundle">
@@ -514,7 +514,7 @@
             <h3>Two Rooms.</h3>
             <p>Choose any two collections and make the pairing entirely yours.</p>
             <strong>$449</strong>
-            <span class="vault-action">CHOOSE TWO · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="bundle_two">CHOOSE TWO →</button>
           </article>
 
           <article class="vault-card vault-bundle">
@@ -525,7 +525,7 @@
             <h3>Three Rooms.</h3>
             <p>Choose any three collections for a larger private selection.</p>
             <strong>$599</strong>
-            <span class="vault-action">CHOOSE THREE · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="bundle_three">CHOOSE THREE →</button>
           </article>
 
           <article class="vault-card vault-complete">
@@ -540,11 +540,73 @@
               <strong>$699</strong>
               <del>$799</del>
             </div>
-            <span class="vault-action">UNLOCK THE VAULT · COMING SOON</span>
+            <button class="vault-action" type="button" data-vault-product="complete_vault">UNLOCK THE VAULT →</button>
           </article>
         </div>
 
-        <p class="vault-note">Private digital access for adults 18+. Payment and automatic delivery are being prepared.</p>
+        <section class="vault-checkout" id="vault-checkout" aria-labelledby="vault-checkout-title" hidden>
+          <p class="eyebrow">PRIVATE CHECKOUT</p>
+          <h3 id="vault-checkout-title">Complete your order.</h3>
+          <form id="vault-order-form">
+            <input type="hidden" name="product_code">
+
+            <div class="vault-order-choice">
+              <span>Your selection</span>
+              <strong id="vault-selected-product">—</strong>
+              <b id="vault-selected-price">—</b>
+            </div>
+
+            <fieldset class="vault-bundle-options" id="vault-bundle-options" hidden>
+              <legend>Choose your collections</legend>
+              <p id="vault-bundle-instruction"></p>
+              <div class="vault-collection-choices">
+                <label><input type="checkbox" name="selected_collections" value="railed"><span>Railed</span></label>
+                <label><input type="checkbox" name="selected_collections" value="good_girl"><span>Good Girl</span></label>
+                <label><input type="checkbox" name="selected_collections" value="mouthful"><span>Mouthful</span></label>
+                <label><input type="checkbox" name="selected_collections" value="private_play"><span>Private Play</span></label>
+                <label><input type="checkbox" name="selected_collections" value="full_sessions"><span>Full Sessions</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>How would you like your access delivered?</legend>
+              <div class="vault-delivery-choices">
+                <label><input type="radio" name="delivery_method" value="private" required><span><b>Private order room</b><small>No phone number or email required.</small></span></label>
+                <label><input type="radio" name="delivery_method" value="email"><span><b>Email</b><small>Receive your access by email.</small></span></label>
+                <label><input type="radio" name="delivery_method" value="text"><span><b>Text message</b><small>Receive your access by SMS.</small></span></label>
+                <label><input type="radio" name="delivery_method" value="whatsapp"><span><b>WhatsApp</b><small>Receive your access through WhatsApp.</small></span></label>
+              </div>
+
+              <label class="vault-contact-field" id="vault-contact-field" hidden>
+                <span id="vault-contact-label">Delivery details</span>
+                <input type="text" name="delivery_contact">
+              </label>
+
+              <div class="vault-private-fields" id="vault-private-fields" hidden>
+                <p>Create a private password</p>
+                <small>Use at least 8 characters. You’ll use it to return and collect your access.</small>
+                <div class="field-grid two-columns">
+                  <label><span>Private password</span><input type="password" name="private_password" minlength="8" maxlength="128" autocomplete="new-password"></label>
+                  <label><span>Confirm password</span><input type="password" name="private_password_confirm" minlength="8" maxlength="128" autocomplete="new-password"></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <label class="check-row vault-age-check">
+              <input type="checkbox" name="age_confirmed" required>
+              <span>I confirm that I am at least 18 years old and am purchasing for my own private use.</span>
+            </label>
+
+            <div class="submit-wrap vault-submit-wrap">
+              <p>Your PayID details, exact amount and unique payment reference will appear on the next page.</p>
+              <button type="submit"><span>CREATE MY PRIVATE ORDER</span><span aria-hidden="true">→</span></button>
+              <p class="form-status" id="vault-form-status" hidden></p>
+            </div>
+          </form>
+          <a class="vault-return-link" href="vault-return.html">Already ordered privately? Return using your password →</a>
+        </section>
+
+        <p class="vault-note">Private digital access for adults 18+. Pay securely by PayID using the unique order reference supplied at checkout.</p>
       </div>
     </section>
     <script src="js/site.js" defer></script>

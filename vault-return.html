@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080808">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Return to Your Order · The House of Kalli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="vault-order-page">
+    <main class="vault-order-room vault-return-room">
+      <a class="room-back" href="index.html#vault">← The Vault</a>
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h1>Return to<br>Your Order</h1>
+      <form class="vault-return-form" id="vault-return-form">
+        <label>
+          <span>Private password</span>
+          <input type="password" name="private_password" minlength="8" maxlength="128" autocomplete="current-password" required>
+        </label>
+        <button type="submit"><span>OPEN MY ORDER</span><span aria-hidden="true">→</span></button>
+        <p class="form-status" id="vault-return-status" hidden></p>
+      </form>
+    </main>
+    <script src="js/vault-return.js" defer></script>
+  </body>
+</html>

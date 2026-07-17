@@ -819,14 +819,27 @@ h1 {
 
 .vault-action {
   display: block;
+  width: 100%;
   margin-top: 24px;
   padding: 17px 0;
   color: #6f6b65;
+  background: transparent;
+  border-right: 0;
+  border-left: 0;
   border-top: 1px solid rgba(20, 19, 17, .25);
   border-bottom: 1px solid rgba(20, 19, 17, .25);
+  cursor: pointer;
+  text-align: left;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: .19em;
+}
+
+.vault-action:hover,
+.vault-action:focus-visible {
+  color: #171613;
+  border-color: #171613;
+  outline: none;
 }
 
 .vault-complete {
@@ -883,6 +896,234 @@ h1 {
   line-height: 1.6;
   letter-spacing: .08em;
 }
+
+.vault-checkout {
+  margin-top: 90px;
+  padding: clamp(42px, 5vw, 70px);
+  color: var(--paper);
+  background: #0b0b0b;
+}
+
+.vault-checkout[hidden] { display: none; }
+
+.vault-checkout h3 {
+  margin: 22px 0 60px;
+  font: 400 clamp(48px, 5vw, 78px)/.95 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-order-choice {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 9px 24px;
+  padding: 24px 0 30px;
+  border-top: 1px solid rgba(242, 240, 236, .3);
+  border-bottom: 1px solid rgba(242, 240, 236, .3);
+}
+
+.vault-order-choice > span {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.vault-order-choice strong,
+.vault-order-choice b {
+  font: 400 28px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-order-choice b { font-size: 32px; }
+
+.vault-checkout fieldset {
+  margin: 0;
+  padding: 48px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 236, .22);
+}
+
+.vault-checkout legend {
+  padding: 0;
+  font: 400 30px/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-bundle-options > p,
+.vault-private-fields > p { color: #d8d5cf; }
+
+.vault-bundle-options > p,
+.vault-private-fields > small {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.vault-collection-choices,
+.vault-delivery-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 28px;
+  background: rgba(242, 240, 236, .18);
+}
+
+.vault-collection-choices label,
+.vault-delivery-choices label {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 80px;
+  padding: 22px;
+  color: #d8d5cf;
+  background: #0b0b0b;
+  cursor: pointer;
+}
+
+.vault-collection-choices input,
+.vault-delivery-choices input,
+.vault-age-check input { accent-color: var(--paper); }
+
+.vault-delivery-choices b,
+.vault-delivery-choices small { display: block; }
+.vault-delivery-choices b { font-weight: 400; }
+.vault-delivery-choices small { margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+.vault-contact-field,
+.vault-private-fields { display: block; margin-top: 34px; }
+.vault-contact-field[hidden],
+.vault-private-fields[hidden] { display: none; }
+
+.vault-contact-field > span,
+.vault-private-fields label > span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.vault-contact-field input,
+.vault-private-fields input {
+  width: 100%;
+  padding: 14px 0;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 236, .35);
+  border-radius: 0;
+  font: 300 18px "Jost", Arial, sans-serif;
+}
+
+.vault-age-check { margin-top: 38px; color: #d8d5cf; }
+.vault-submit-wrap { margin-top: 42px; }
+.vault-submit-wrap > p { color: var(--muted); }
+.vault-submit-wrap button { color: var(--paper); border-color: rgba(242, 240, 236, .35); }
+.vault-submit-wrap .form-status { color: var(--muted); }
+
+.vault-return-link {
+  display: inline-block;
+  margin-top: 45px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+
+.vault-order-page,
+.vault-admin-page { min-height: 100svh; background: #0b0b0b; }
+
+.vault-order-room,
+.vault-admin {
+  width: min(100% - 48px, 1080px);
+  margin: 0 auto;
+  padding: clamp(70px, 9vw, 140px) 0 80px;
+}
+
+.vault-order-room h1,
+.vault-admin h1 {
+  margin: 28px 0 clamp(60px, 9vh, 110px);
+  font: 400 clamp(62px, 10vw, 126px)/.82 "Cormorant Garamond", Georgia, serif;
+}
+
+.order-panel {
+  padding: clamp(35px, 5vw, 64px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.order-panel h2 {
+  margin: 18px 0 24px;
+  font: 400 clamp(42px, 6vw, 72px)/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.order-reference,
+.payment-waiting {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.order-summary { margin: 42px 0; }
+.order-summary p { display: flex; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid rgba(242, 240, 236, .18); }
+.order-summary span { color: var(--muted); }
+.order-summary strong { font-weight: 400; }
+
+.payid-instructions > p { max-width: 700px; color: #c2beb8; font-size: 17px; line-height: 1.7; }
+
+.copy-value,
+.refresh-order,
+.vault-access-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 0;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 236, .25);
+  cursor: pointer;
+  font: 400 12px "Jost", Arial, sans-serif;
+  letter-spacing: .14em;
+  text-decoration: none;
+}
+
+.copy-value span:first-child { color: var(--muted); }
+.payment-waiting { margin-top: 50px; }
+.refresh-order { margin-top: 12px; border-top: 1px solid rgba(242, 240, 236, .25); }
+.vault-access-button { margin: 48px 0 22px; border-top: 1px solid rgba(242, 240, 236, .35); }
+.order-panel > small,
+.order-security { color: #77746f; font-size: 12px; line-height: 1.6; }
+.order-security { margin-top: 42px; }
+
+.vault-return-form,
+.admin-login { max-width: 700px; }
+.vault-return-form label,
+.admin-login label { display: block; }
+.vault-return-form label > span,
+.admin-login label > span,
+.admin-access-url > span { display: block; color: var(--muted); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.admin-selections { margin: 8px 0 24px; color: var(--muted); font: 300 15px/1.7 "Jost", Arial, sans-serif; }
+.admin-selections b { color: var(--paper); font-weight: 400; }
+.vault-return-form input,
+.admin-login input,
+.admin-access-url textarea { width: 100%; padding: 16px 0; color: var(--paper); background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; resize: vertical; font: 300 18px/1.6 "Jost", Arial, sans-serif; }
+.vault-return-form button,
+.admin-login button { width: 100%; margin-top: 42px; padding: 20px 0; color: var(--paper); background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; text-align: left; letter-spacing: .16em; }
+
+.admin-orders { display: grid; gap: 24px; }
+.admin-order { padding: 32px; background: #151515; border: 1px solid rgba(242, 240, 236, .16); }
+.admin-order-head { display: flex; justify-content: space-between; gap: 24px; }
+.admin-order-head span { color: var(--muted); font-size: 11px; letter-spacing: .16em; }
+.admin-order-head h2 { margin: 8px 0; font: 400 42px "Cormorant Garamond", Georgia, serif; }
+.admin-order-head > strong { font: 400 34px "Cormorant Garamond", Georgia, serif; }
+.admin-order dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 28px 0; }
+.admin-order dl div { border-top: 1px solid rgba(242, 240, 236, .15); padding-top: 12px; }
+.admin-order dt { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.admin-order dd { margin: 7px 0 0; overflow-wrap: anywhere; }
+.admin-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 24px; }
+.admin-actions button,
+.admin-actions a { padding: 14px 18px; color: var(--paper); background: transparent; border: 1px solid rgba(242, 240, 236, .3); cursor: pointer; font-size: 10px; letter-spacing: .12em; text-decoration: none; }
+.admin-actions span { color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.admin-order-status { color: var(--muted); }
 
 .waiting-page { min-height: 100svh; background: #0b0b0b; }
 
@@ -1143,6 +1384,18 @@ h1 {
   .vault-complete h3 { margin-top: 50px; font-size: clamp(54px, 17vw, 76px); }
   .vault-launch-price { flex-wrap: wrap; gap: 10px 16px; }
   .vault-launch-price > span { width: 100%; }
+  .vault-checkout { margin-top: 60px; padding: 38px 22px; }
+  .vault-collection-choices,
+  .vault-delivery-choices { grid-template-columns: 1fr; }
+  .vault-order-choice strong { font-size: 24px; }
+  .vault-order-choice b { font-size: 28px; }
+  .vault-order-room,
+  .vault-admin { width: min(100% - 40px, 1080px); }
+  .order-summary p { display: grid; gap: 8px; }
+  .copy-value { display: grid; gap: 7px; text-align: left; overflow-wrap: anywhere; }
+  .admin-order { padding: 24px 18px; }
+  .admin-order-head { display: grid; }
+  .admin-order dl { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

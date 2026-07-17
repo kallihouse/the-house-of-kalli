@@ -25,10 +25,29 @@ For best results, use a high-resolution portrait-oriented JPG. The CSS automatic
 ```text
 the-house-of-kalli/
 ├── index.html
+├── return.html
+├── waiting.html
 ├── css/
 │   └── style.css
+├── js/
+│   ├── return-room.js
+│   ├── site.js
+│   └── waiting.js
+├── functions/
+│   └── api/
 ├── images/
 │   ├── hero.jpg
 │   └── hero-placeholder.svg
+├── migrations/
+│   ├── 0001_initial.sql
+│   └── 0002_private_password.sql
 └── README.md
 ```
+
+## Private waiting-room passwords
+
+1. Run `migrations/0002_private_password.sql` once in the existing D1 database.
+2. Add an encrypted Cloudflare Pages secret named `ROOM_PASSWORD_SECRET`.
+3. Upload the updated project contents to GitHub.
+
+Passwords are converted into a keyed, non-readable lookup before they are saved. The return form is limited to five unsuccessful attempts per 15-minute window.

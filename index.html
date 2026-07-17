@@ -84,6 +84,8 @@
         </a>
       </nav>
 
+      <a class="return-room-link" href="return.html">Return to my private waiting room →</a>
+
       <a class="back-door" href="#house-title">← Front door</a>
     </section>
 
@@ -127,7 +129,26 @@
               <input type="radio" name="contact_preference" value="private_house_reply">
               <span>Enter the private waiting room. No phone number required.</span>
             </label>
-            <small>After submitting, you'll receive a private link to save. Use it to check the status of your request. The chat will stay locked until I approve your request and message you first.</small>
+            <small>After submitting, you'll enter your private waiting room. The conversation stays locked until I approve your request and message you first.</small>
+            <div class="password-fields" id="password-fields" hidden>
+              <p>Create a private password</p>
+              <small>This password is the only thing you'll need to return to your waiting room. Use at least 8 characters and choose something you'll remember.</small>
+              <div class="field-grid two-columns">
+                <label>
+                  <span>Private password</span>
+                  <input type="password" name="private_password" minlength="8" maxlength="128" autocomplete="new-password">
+                </label>
+                <label>
+                  <span>Confirm password</span>
+                  <input type="password" name="private_password_confirm" minlength="8" maxlength="128" autocomplete="new-password">
+                </label>
+              </div>
+              <label class="show-password">
+                <input type="checkbox" id="show-private-password">
+                <span>Show password</span>
+              </label>
+              <small>If you forget this password and haven't provided a mobile number, your waiting room cannot be recovered.</small>
+            </div>
           </div>
         </fieldset>
 

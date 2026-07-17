@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Return to Your Waiting Room · The House of Kalli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="waiting-page">
+    <main class="waiting-room return-room">
+      <p class="eyebrow">THE HOUSE OF KALLI</p>
+      <h1>Return to Your<br>Waiting Room</h1>
+      <form class="return-form" id="return-form">
+        <label>
+          <span>Private password</span>
+          <input type="password" name="private_password" minlength="8" maxlength="128" autocomplete="current-password" required autofocus>
+        </label>
+        <label class="show-password">
+          <input type="checkbox" id="show-return-password">
+          <span>Show password</span>
+        </label>
+        <button type="submit"><span>OPEN MY WAITING ROOM</span><span aria-hidden="true">→</span></button>
+        <p class="form-status" id="return-status" hidden></p>
+      </form>
+      <p class="waiting-warning">Your password is private. It is never displayed or stored in readable form.</p>
+      <a class="waiting-home" href="/">← Front door</a>
+    </main>
+    <script src="js/return-room.js" defer></script>
+  </body>
+</html>

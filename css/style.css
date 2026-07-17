@@ -192,6 +192,17 @@ h1 {
   text-transform: uppercase;
 }
 
+.return-room-link {
+  position: absolute;
+  right: clamp(32px, 5vw, 82px);
+  bottom: 32px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .threshold {
   display: grid;
   align-content: center;
@@ -379,6 +390,35 @@ h1 {
   line-height: 1.65;
 }
 
+.password-fields {
+  margin-top: 30px;
+  padding: 30px 0 4px;
+  border-top: 1px solid rgba(242, 240, 236, .14);
+}
+
+.password-fields[hidden] { display: none; }
+
+.password-fields > p {
+  margin: 0 0 10px;
+  color: var(--paper);
+  font: 400 25px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+.password-fields > small { margin: 0 0 25px; }
+
+.show-password {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center;
+  gap: 10px !important;
+  width: max-content;
+  margin: -8px 0 18px !important;
+  cursor: pointer;
+}
+
+.show-password input { width: 16px; height: 16px; accent-color: #dedbd5; }
+.show-password span { font-size: 10px !important; letter-spacing: .14em !important; }
+
 .check-row input {
   width: 16px;
   height: 16px;
@@ -490,6 +530,50 @@ h1 {
 .message p { margin: 9px 0 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 19px; line-height: 1.5; }
 .waiting-note { margin-top: 30px; }
 
+.return-room h1 { font-size: clamp(54px, 8vw, 108px); }
+
+.return-form {
+  max-width: 720px;
+  padding: 45px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.return-form > label:first-child { display: grid; gap: 12px; }
+.return-form label > span { color: #bab7b1; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+
+.return-form input[type="password"],
+.return-form input[type="text"] {
+  width: 100%;
+  padding: 15px 0;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 236, .28);
+  border-radius: 0;
+  font: 400 22px/1.5 "Cormorant Garamond", Georgia, serif;
+  outline: none;
+}
+
+.return-form .show-password { margin: 22px 0 36px !important; }
+
+.return-form button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 2px;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  font: 400 12px Inter, Arial, sans-serif;
+  letter-spacing: .25em;
+}
+
+.return-form .form-status { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
 @media (max-width: 760px) {
   .front-door {
     position: relative;
@@ -533,6 +617,7 @@ h1 {
   .room-copy strong { font-size: 26px; }
   .room-copy small { font-size: 8px; line-height: 1.5; }
   .back-door { left: 28px; bottom: 28px; }
+  .return-room-link { position: static; display: block; margin-top: 38px; line-height: 1.6; }
 
   .threshold {
     min-height: 42svh;

@@ -51,7 +51,7 @@
           <span class="room-number">02</span>
           <span class="room-copy">
             <strong>Digital Experiences</strong>
-            <small>Sexting, phone sessions &amp; custom videos</small>
+            <small>Sexting &amp; video chat</small>
           </span>
           <span class="room-arrow" aria-hidden="true">→</span>
         </a>
@@ -302,6 +302,141 @@
           <p class="form-status" id="form-status" hidden></p>
         </div>
       </form>
+    </section>
+
+    <section id="digital" class="digital" aria-labelledby="digital-title">
+      <header class="digital-intro">
+        <a class="room-back" href="#inside">← The rooms</a>
+        <p class="eyebrow">PRIVATE · DIGITAL · PERSONAL</p>
+        <h2 id="digital-title">Digital<br>Experiences</h2>
+        <p>A little closer, wherever you are.</p>
+      </header>
+
+      <div class="digital-content">
+        <div class="digital-list" aria-label="Digital experience rates">
+          <article class="digital-rate">
+            <span>15 minutes</span>
+            <h3>Sexting</h3>
+            <strong>$150</strong>
+            <p>Messages with selected photos and videos from my private collection.</p>
+          </article>
+          <article class="digital-rate featured-digital">
+            <span>15 minutes</span>
+            <h3>Live Sexting</h3>
+            <strong>$250</strong>
+            <p>Messages with photos and videos created live during our session.</p>
+          </article>
+          <article class="digital-rate video-rate">
+            <span>Private video chat</span>
+            <h3>Video Chat</h3>
+            <div class="video-prices">
+              <p><b>5 minutes</b><strong>$100</strong></p>
+              <p><b>10 minutes</b><strong>$150</strong></p>
+              <p><b>20 minutes</b><strong>$200</strong></p>
+            </div>
+          </article>
+        </div>
+
+        <form class="booking-form digital-form" id="digital-form">
+          <fieldset>
+            <legend><span>01</span> Choose your experience</legend>
+            <label>
+              <span>Experience</span>
+              <select name="digital_experience" required>
+                <option value="" selected disabled>Choose</option>
+                <option>Sexting · 15 minutes · $150</option>
+                <option>Live Sexting · 15 minutes · $250</option>
+                <option>Video Chat · 5 minutes · $100</option>
+                <option>Video Chat · 10 minutes · $150</option>
+                <option>Video Chat · 20 minutes · $200</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>02</span> Tell me about you</legend>
+            <div class="field-grid two-columns">
+              <label>
+                <span>Name or alias</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label>
+                <span>Age</span>
+                <input type="number" name="age" min="18" inputmode="numeric" required>
+              </label>
+            </div>
+            <label>
+              <span>What are you in the mood for? <em>Optional</em></span>
+              <textarea name="digital_notes" rows="3"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>03</span> When suits you?</legend>
+            <div class="field-grid two-columns">
+              <label>
+                <span>Preferred date</span>
+                <input type="date" name="date" required>
+              </label>
+              <label>
+                <span>Preferred time</span>
+                <input type="time" name="time" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>04</span> How should we continue?</legend>
+            <label>
+              <span>Mobile number <em>Optional</em></span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+            <div class="contact-choice" role="group" aria-labelledby="digital-contact-label">
+              <p id="digital-contact-label">Choose one</p>
+              <label class="choice-row">
+                <input type="radio" name="contact_preference" value="text_me" required>
+                <span>You may text me on the number above.</span>
+              </label>
+              <label class="choice-row">
+                <input type="radio" name="contact_preference" value="private_house_reply">
+                <span>Enter the private waiting room. No phone number required.</span>
+              </label>
+              <small>The conversation stays locked until I accept your request and message you first.</small>
+              <div class="password-fields" id="digital-password-fields" hidden>
+                <p>Create a private password</p>
+                <small>Use at least 8 characters. This is the only thing you'll need to return.</small>
+                <div class="field-grid two-columns">
+                  <label>
+                    <span>Private password</span>
+                    <input type="password" name="private_password" minlength="8" maxlength="128" autocomplete="new-password">
+                  </label>
+                  <label>
+                    <span>Confirm password</span>
+                    <input type="password" name="private_password_confirm" minlength="8" maxlength="128" autocomplete="new-password">
+                  </label>
+                </div>
+                <label class="show-password">
+                  <input type="checkbox" id="show-digital-password">
+                  <span>Show password</span>
+                </label>
+              </div>
+            </div>
+            <label class="check-row digital-payment-check">
+              <input type="checkbox" name="payment_agreed" required>
+              <span>I understand payment is required before the session begins.</span>
+            </label>
+          </fieldset>
+
+          <div class="submit-wrap">
+            <p>Send your request and I'll continue the conversation if the timing works.</p>
+            <button type="submit">
+              <span>REQUEST MY SESSION</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-status" id="digital-form-status" hidden></p>
+          </div>
+        </form>
+      </div>
     </section>
     <script src="js/site.js" defer></script>
   </body>

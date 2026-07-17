@@ -813,6 +813,10 @@ h1 {
   font: 400 34px/1 "Cormorant Garamond", Georgia, serif;
 }
 
+.vault-bundle {
+  background: rgba(255, 255, 255, .16);
+}
+
 .vault-action {
   display: block;
   margin-top: 24px;
@@ -843,6 +847,29 @@ h1 {
 }
 
 .vault-complete > p { max-width: 650px; }
+
+.vault-launch-price {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-top: auto;
+}
+
+.vault-launch-price > span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .18em;
+}
+
+.vault-launch-price > strong {
+  font: 400 44px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.vault-launch-price > del {
+  color: #77746f;
+  font: 400 23px/1 "Cormorant Garamond", Georgia, serif;
+}
 
 .vault-complete .vault-action {
   color: #c8c4bd;
@@ -1114,6 +1141,8 @@ h1 {
     padding: 36px 26px 40px !important;
   }
   .vault-complete h3 { margin-top: 50px; font-size: clamp(54px, 17vw, 76px); }
+  .vault-launch-price { flex-wrap: wrap; gap: 10px 16px; }
+  .vault-launch-price > span { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

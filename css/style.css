@@ -192,16 +192,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.return-room-link {
-  position: absolute;
-  right: clamp(32px, 5vw, 82px);
-  bottom: 32px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: .16em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+.return-waiting-room { margin-top: 18px; border-top: 1px solid rgba(242, 240, 236, .2); }
 
 .threshold {
   display: grid;
@@ -427,7 +418,8 @@ h1 {
 }
 
 .check-row span {
-  font: 400 18px/1.45 "Cormorant Garamond", Georgia, serif;
+  color: #d4d1cb !important;
+  font: 400 23px/1.45 "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0 !important;
   text-transform: none !important;
 }
@@ -499,8 +491,8 @@ h1 {
   font-weight: 400;
 }
 
-.waiting-content > p { color: var(--muted); line-height: 1.7; }
-.waiting-name { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.waiting-content > p { color: #b8b5af; font-size: 19px; line-height: 1.7; }
+.waiting-name { font-size: 12px !important; letter-spacing: .14em; text-transform: uppercase; }
 
 .locked-room {
   display: flex;
@@ -518,11 +510,11 @@ h1 {
   max-width: 580px;
   margin: 34px 0 70px;
   color: #77746f;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
-.waiting-home { color: var(--muted); font-size: 9px; letter-spacing: .2em; text-decoration: none; text-transform: uppercase; }
+.waiting-home { color: var(--muted); font-size: 12px; letter-spacing: .2em; text-decoration: none; text-transform: uppercase; }
 .message-list { display: grid; gap: 22px; margin-top: 34px; }
 .message { max-width: 78%; padding: 20px 22px; background: #171715; }
 .message.from-client { justify-self: end; background: #24221f; }
@@ -617,7 +609,6 @@ h1 {
   .room-copy strong { font-size: 26px; }
   .room-copy small { font-size: 8px; line-height: 1.5; }
   .back-door { left: 28px; bottom: 28px; }
-  .return-room-link { position: static; display: block; margin-top: 38px; line-height: 1.6; }
 
   .threshold {
     min-height: 42svh;

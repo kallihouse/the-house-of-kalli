@@ -7,6 +7,17 @@ const locationSelect = form?.querySelector('select[name="location"]');
 const destinationField = document.querySelector('#destination-field');
 const destinationInput = destinationField?.querySelector('input');
 
+document.querySelectorAll('.rooms .room[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    history.pushState(null, '', link.getAttribute('href'));
+  });
+});
+
 if (form) {
   const updatePasswordFields = () => {
     const selected = form.querySelector('input[name="contact_preference"]:checked');

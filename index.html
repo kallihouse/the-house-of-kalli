@@ -21,7 +21,7 @@
         <div class="welcome-inner">
           <h1 id="house-title">THE HOUSE<br>OF KALLI</h1>
           <p class="arrival">You've arrived.</p>
-          <a class="enter" href="#inside" aria-label="Step inside The House of Kalli">
+          <a class="enter" href="#inside" aria-label="Come inside The House of Kalli">
             <span>COME INSIDE..</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
@@ -31,10 +31,60 @@
     </main>
 
     <section id="inside" class="inside" aria-labelledby="inside-title">
-      <p class="eyebrow">THE HOUSE OF KALLI</p>
-      <h2 id="inside-title">Welcome.</h2>
-      <p>The next room is being prepared.</p>
-      <a href="#house-title">Return to the front door</a>
+      <header class="inside-intro">
+        <p class="eyebrow">WELCOME TO THE HOUSE</p>
+        <h2 id="inside-title">What brings<br>you here?</h2>
+        <p class="inside-note">Choose where you'd like to begin.</p>
+      </header>
+
+      <nav class="rooms" aria-label="Choose an experience">
+        <a class="room" href="#booking">
+          <span class="room-number">01</span>
+          <span class="room-copy">
+            <strong>Request a Booking</strong>
+            <small>In-person experiences</small>
+          </span>
+          <span class="room-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="room" href="#digital">
+          <span class="room-number">02</span>
+          <span class="room-copy">
+            <strong>Digital Experiences</strong>
+            <small>Sexting, phone sessions &amp; custom videos</small>
+          </span>
+          <span class="room-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="room" href="#vault">
+          <span class="room-number">03</span>
+          <span class="room-copy">
+            <strong>The Vault</strong>
+            <small>Explore my private collection</small>
+          </span>
+          <span class="room-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="room" href="#access">
+          <span class="room-number">04</span>
+          <span class="room-copy">
+            <strong>Ongoing Access</strong>
+            <small>Stay a little closer</small>
+          </span>
+          <span class="room-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="room" href="#returning">
+          <span class="room-number">05</span>
+          <span class="room-copy">
+            <strong>Returning Clients</strong>
+            <small>Welcome back</small>
+          </span>
+          <span class="room-arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <a class="back-door" href="#house-title">← Front door</a>
     </section>
   </body>
 </html>

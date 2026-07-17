@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Request Something Made for You | The House of Kalli</title>
   <link rel="stylesheet" href="css/custom-request.css">
-  <style>#contact-field[hidden],#private-fields[hidden]{display:none!important}</style>
+  <style>#contact-field[hidden],#private-fields[hidden]{display:none!important}.private-fields p{font-size:12px!important;font-weight:400!important;line-height:1.6!important;color:#71665e!important}.private-fields p strong{font-size:12px!important;font-weight:600!important}</style>
 </head>
 <body>
 <main>
@@ -29,7 +29,7 @@
       <label>How should I reply?<select name="contact_method" id="contact-method"><option value="email">Email</option><option value="sms">SMS</option><option value="whatsapp">WhatsApp</option><option value="private_room">Private anonymous room</option></select></label>
       <label id="contact-field">Contact detail<input name="contact_value" maxlength="200"></label>
       <div class="private-fields wide" id="private-fields" hidden>
-        <p><strong>Create your private-room password.</strong> You’ll need your reference number and this password to return. We cannot recover it for you.</p>
+        <p><strong>Create your private-room password.</strong> You’ll use your reference number and this password whenever you return. For your privacy, the password cannot be recovered, so please save it somewhere safe.</p>
         <label>Private password<input name="private_password" type="password" minlength="8" maxlength="128" autocomplete="new-password"></label>
         <label>Confirm password<input name="private_password_confirm" type="password" minlength="8" maxlength="128" autocomplete="new-password"></label>
       </div>

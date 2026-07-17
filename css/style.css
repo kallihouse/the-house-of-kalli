@@ -192,6 +192,175 @@ h1 {
   text-transform: uppercase;
 }
 
+.booking {
+  display: grid;
+  grid-template-columns: minmax(320px, .75fr) minmax(560px, 1.25fr);
+  align-items: start;
+  gap: clamp(70px, 10vw, 170px);
+  min-height: 100svh;
+  padding: clamp(74px, 8vw, 132px);
+  background: #10100f;
+}
+
+.booking-intro {
+  position: sticky;
+  top: 90px;
+}
+
+.room-back {
+  display: inline-block;
+  margin-bottom: clamp(80px, 15vh, 150px);
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.booking h2 {
+  margin: 24px 0 24px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(60px, 6.7vw, 110px);
+  font-weight: 400;
+  line-height: .86;
+}
+
+.booking-intro > p:last-child {
+  max-width: 330px;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.booking-form { border-top: 1px solid var(--line); }
+
+.booking-form fieldset {
+  margin: 0;
+  padding: 44px 0 52px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.booking-form legend {
+  width: 100%;
+  margin-bottom: 38px;
+  color: var(--paper);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 29px;
+}
+
+.booking-form legend span {
+  display: inline-block;
+  width: 48px;
+  color: #77746f;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: .18em;
+}
+
+.field-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.two-columns { grid-template-columns: 1fr 1fr; }
+
+.booking-form label:not(.check-row) {
+  display: grid;
+  gap: 11px;
+  margin-bottom: 28px;
+}
+
+.booking-form label > span {
+  color: #bab7b1;
+  font-size: 9px;
+  letter-spacing: .16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.booking-form em {
+  color: #6f6c67;
+  font-style: normal;
+}
+
+.booking-form input:not([type="checkbox"]),
+.booking-form textarea,
+.booking-form select {
+  width: 100%;
+  padding: 13px 0;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 236, .28);
+  border-radius: 0;
+  font: 400 18px/1.5 "Cormorant Garamond", Georgia, serif;
+  outline: none;
+}
+
+.booking-form textarea { resize: vertical; }
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus { border-bottom-color: var(--paper); }
+
+.check-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 14px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+
+.check-row input {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: #dedbd5;
+}
+
+.check-row span { text-transform: none !important; }
+
+.submit-wrap { padding: 48px 0 20px; }
+
+.submit-wrap p {
+  max-width: 500px;
+  margin: 0 0 38px;
+  color: var(--muted);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.submit-wrap button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 2px;
+  color: var(--paper);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  font: 400 10px Inter, Arial, sans-serif;
+  letter-spacing: .28em;
+}
+
+.submit-wrap .form-status {
+  margin-top: 28px;
+  color: #d3d0ca;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 760px) {
   .front-door {
     position: relative;
@@ -235,6 +404,18 @@ h1 {
   .room-copy strong { font-size: 26px; }
   .room-copy small { font-size: 8px; line-height: 1.5; }
   .back-door { left: 28px; bottom: 28px; }
+
+  .booking {
+    display: block;
+    padding: 72px 28px 90px;
+  }
+
+  .booking-intro { position: static; margin-bottom: 76px; }
+  .room-back { margin-bottom: 78px; }
+  .booking h2 { font-size: clamp(58px, 18vw, 82px); }
+  .two-columns { grid-template-columns: 1fr; gap: 0; }
+  .booking-form fieldset { padding: 38px 0 44px; }
+  .booking-form legend { font-size: 25px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

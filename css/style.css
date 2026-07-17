@@ -12,6 +12,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--paper);
   background: var(--ink);
   font-family: Inter, Arial, sans-serif;
@@ -649,6 +650,25 @@ h1 {
 }
 
 .return-form .form-status { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+@media (max-width: 1200px) {
+  .rates {
+    grid-template-columns: 1fr;
+    gap: 68px;
+  }
+
+  .rates-intro {
+    position: static;
+    max-width: 680px;
+  }
+
+  .rates h2 {
+    max-width: 760px;
+    font-size: clamp(62px, 9vw, 100px);
+  }
+
+  .rates-content { min-width: 0; }
+}
 
 @media (max-width: 760px) {
   .front-door {

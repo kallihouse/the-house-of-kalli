@@ -6,6 +6,7 @@ const OFFICE_PATHS = new Set([
   '/visits', '/visits.html',
   '/correspondence', '/correspondence.html',
   '/journal', '/journal.html',
+  '/finances', '/finances.html',
 ]);
 const COOKIE_NAME = 'kalli_office_session';
 const SESSION_SECONDS = 60 * 60 * 12;
@@ -142,7 +143,9 @@ export async function onRequest(context) {
                   ? '/correspondence'
                   : url.pathname === '/journal' || url.pathname === '/journal.html'
                     ? '/journal'
-                    : '/office',
+                    : url.pathname === '/finances' || url.pathname === '/finances.html'
+                      ? '/finances'
+                      : '/office',
         'Cache-Control': 'no-store',
         'Set-Cookie': `${COOKIE_NAME}=${token}; Path=/; Max-Age=${SESSION_SECONDS}; HttpOnly; Secure; SameSite=Strict`,
       },

@@ -171,6 +171,7 @@ const vaultCheckout = document.querySelector('#vault-checkout');
 
 if (vaultForm && vaultCheckout) {
   const products = {
+    taster: { name: 'A Little Taste', price: '$150', selections: 0 },
     railed: { name: 'Railed', price: '$249', selections: 0 },
     good_girl: { name: 'Good Girl', price: '$299', selections: 0 },
     mouthful: { name: 'Mouthful', price: '$249', selections: 0 },

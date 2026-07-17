@@ -23,6 +23,14 @@
         <button type="submit">OPEN ORDERS →</button>
         <p class="form-status" id="admin-status" hidden></p>
       </form>
+      <section class="vault-link-manager" id="vault-link-manager" hidden>
+        <div class="vault-link-manager-heading">
+          <p class="eyebrow">CURRENT CUSTOMER COLLECTION LINKS</p>
+          <h2>Rotating delivery links</h2>
+          <p>Replace a link here whenever you disable and regenerate it in Dropbox. Every authorised order room will immediately use the current link.</p>
+        </div>
+        <form id="vault-links-form"></form>
+      </section>
       <section class="admin-orders" id="admin-orders" hidden aria-live="polite"></section>
     </main>
     <script src="js/vault-admin.js" defer></script>

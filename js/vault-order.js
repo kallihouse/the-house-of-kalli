@@ -16,16 +16,10 @@ const copyButton = (label, value) => `
 
 const renderOrder = (order) => {
   if (order.status === 'paid') {
-    const selections = Array.isArray(order.selections) ? order.selections : [];
-    const links = Array.isArray(order.access_urls) ? order.access_urls : [];
-    const collectionNames = {
-      railed: 'Railed', good_girl: 'Good Girl', mouthful: 'Mouthful',
-      private_play: 'Private Play', full_sessions: 'Full Sessions',
-    };
-    const accessButtons = links.map((url, index) => {
-      const selection = selections[index];
-      const label = collectionNames[selection] || selection || (links.length === 1 ? order.product : `Private collection ${index + 1}`);
-      return `<a class="vault-access-button" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+    const links = Array.isArray(order.access_links) ? order.access_links : [];
+    const accessButtons = links.map((link, index) => {
+      const label = link.name || `Private collection ${index + 1}`;
+      return `<a class="vault-access-button" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
         <span>OPEN ${escapeHtml(label).toUpperCase()}</span><span>→</span>
       </a>`;
     }).join('');
@@ -33,7 +27,7 @@ const renderOrder = (order) => {
       <p class="order-reference">${escapeHtml(order.reference)} · PAYMENT RECEIVED</p>
       <h2>Your access is ready.</h2>
       <p>${escapeHtml(order.product)}</p>
-      ${accessButtons}
+      ${accessButtons || '<p>Your collection link is being refreshed. Please check again shortly.</p>'}
       <small>Save your collection in Dropbox so you can return whenever you like.</small>`;
     return;
   }

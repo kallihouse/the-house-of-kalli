@@ -7,6 +7,7 @@ const json = (data, status = 200) => Response.json(data, {
 });
 
 const PRODUCTS = Object.freeze({
+  taster: { name: 'A Little Taste', amount: 15000 },
   railed: { name: 'Railed', amount: 24900 },
   good_girl: { name: 'Good Girl', amount: 29900 },
   mouthful: { name: 'Mouthful', amount: 24900 },

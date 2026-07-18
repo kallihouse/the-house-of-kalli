@@ -1,3 +1,5 @@
+import { sendHousePush } from './lib/push.js';
+
 const OFFICE_PATHS = new Set([
   '/office', '/office.html',
   '/guests', '/guests.html',
@@ -11,6 +13,16 @@ const OFFICE_PATHS = new Set([
 ]);
 const COOKIE_NAME = 'kalli_office_session';
 const SESSION_SECONDS = 60 * 60 * 12;
+
+const notificationFor = (pathname, method) => {
+  if (method !== 'POST') return null;
+  if (pathname === '/api/custom-requests') return { title: 'The House Office', body: 'A new custom request has arrived.', url: '/customs', tag: 'custom-request' };
+  if (pathname.startsWith('/api/custom-room/')) return { title: 'The House Office', body: 'You have a new private message.', url: '/customs', tag: 'private-message' };
+  if (pathname === '/api/vault-orders' || pathname === '/api/vault-orders/' || pathname === '/api/orders') return { title: 'The House Office', body: 'A new order has arrived.', url: '/orders', tag: 'new-order' };
+  if (pathname === '/api/requests' || pathname.startsWith('/api/waiting/')) return { title: 'The House Office', body: 'A new private request has arrived.', url: '/correspondence', tag: 'new-request' };
+  if (pathname === '/api/visit-request' || pathname === '/api/visits/request') return { title: 'The House Office', body: 'A new visit request has arrived.', url: '/visits', tag: 'visit-request' };
+  return null;
+};
 
 const encoder = new TextEncoder();
 
@@ -107,9 +119,14 @@ const loginPage = (message = '', returnPath = '/office') => new Response(`<!doct
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
+  const notification = notificationFor(url.pathname, context.request.method);
   const isOfficePage = OFFICE_PATHS.has(url.pathname);
   const isOfficeApi = url.pathname.startsWith('/api/office-');
-  if (!isOfficePage && !isOfficeApi) return context.next();
+  if (!isOfficePage && !isOfficeApi) {
+    const response = await context.next();
+    if (notification && response.ok) context.waitUntil(sendHousePush(context.env, notification));
+    return response;
+  }
 
   const secret = context.env.VAULT_ADMIN_SECRET;
   if (!secret) return new Response('The House Office password has not been configured.', { status: 503 });

@@ -1,0 +1,13 @@
+{
+  "name":"The House Office",
+  "short_name":"House Office",
+  "description":"Kalli's private House Office",
+  "start_url":"/office",
+  "scope":"/",
+  "display":"standalone",
+  "background_color":"#f5f1ea",
+  "theme_color":"#28231f",
+  "icons":[
+    {"src":"/images/house-app-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

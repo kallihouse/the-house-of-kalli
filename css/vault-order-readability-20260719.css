@@ -1,0 +1,43 @@
+.vault-order-page .room-back{
+  color:#aaa6a0;
+  font-size:14px;
+}
+
+.vault-order-page .order-reference,
+.vault-order-page .payment-waiting{
+  color:#aaa6a0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.vault-order-page .order-panel>p:not(.order-reference):not(.payment-waiting){
+  font-size:20px;
+  line-height:1.6;
+}
+
+.vault-order-page .vault-access-button,
+.vault-order-page .copy-value,
+.vault-order-page .refresh-order{
+  font-size:14px;
+  line-height:1.5;
+}
+
+.vault-order-page .order-panel>small,
+.vault-order-page .order-security{
+  display:block;
+  color:#aaa6a0;
+  font-size:16px;
+  line-height:1.7;
+}
+
+@media(max-width:600px){
+  .vault-order-page .room-back{font-size:12px}
+  .vault-order-page .order-reference,
+  .vault-order-page .payment-waiting{font-size:12px}
+  .vault-order-page .order-panel>p:not(.order-reference):not(.payment-waiting){font-size:18px}
+  .vault-order-page .vault-access-button,
+  .vault-order-page .copy-value,
+  .vault-order-page .refresh-order{font-size:13px}
+  .vault-order-page .order-panel>small,
+  .vault-order-page .order-security{font-size:15px}
+}

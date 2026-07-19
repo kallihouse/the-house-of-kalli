@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS booking_requests (
+CREATE TABLE IF NOT EXISTS house_booking_requests (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   reference TEXT NOT NULL UNIQUE,
   guest_name TEXT NOT NULL,
@@ -23,14 +23,14 @@ CREATE TABLE IF NOT EXISTS booking_requests (
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS booking_messages (
+CREATE TABLE IF NOT EXISTS house_booking_messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   booking_request_id INTEGER NOT NULL,
   sender TEXT NOT NULL CHECK (sender IN ('client','kalli')),
   body TEXT NOT NULL,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (booking_request_id) REFERENCES booking_requests(id) ON DELETE CASCADE
+  FOREIGN KEY (booking_request_id) REFERENCES house_booking_requests(id) ON DELETE CASCADE
 );
 
-CREATE INDEX IF NOT EXISTS booking_requests_status_idx ON booking_requests(status, created_at DESC);
-CREATE INDEX IF NOT EXISTS booking_messages_request_idx ON booking_messages(booking_request_id, id);
+CREATE INDEX IF NOT EXISTS house_booking_requests_status_idx ON house_booking_requests(status, created_at DESC);
+CREATE INDEX IF NOT EXISTS house_booking_messages_request_idx ON house_booking_messages(booking_request_id, id);

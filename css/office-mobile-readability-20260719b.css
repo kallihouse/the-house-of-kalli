@@ -1,0 +1,15 @@
+@media (max-width:760px){
+  :root{--muted:#665d56}
+  .welcome>div>p:last-child{color:#6b625b;font-size:15px;line-height:1.5}
+  .attention-card{padding:22px 20px;gap:15px}
+  .attention-card.is-clear{opacity:.92}
+  .attention-card b{font-size:34px}
+  .attention-card strong{font-size:14px;line-height:1.35;color:#3f3934}
+  .attention-card small{font-size:12px;line-height:1.4;color:#6f665f;margin-top:5px}
+  .attention-card.is-clear b,
+  .attention-card.is-clear strong{color:#46403a}
+  .attention-card.is-clear .card-icon{opacity:.95}
+  .quiet-note,
+  .empty-live,
+  .schedule-empty{color:#6b625b}
+}

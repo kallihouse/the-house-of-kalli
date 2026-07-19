@@ -48,9 +48,15 @@ export async function onRequestPost(context) {
   if (!context.env.DB || !context.env.ROOM_PASSWORD_SECRET) {
     return json({ error: 'The private order system is not connected yet.' }, 503);
   }
-  if (!context.env.PAYID_VALUE || !context.env.PAYID_NAME) {
-    return json({ error: 'PayID checkout is being prepared.' }, 503);
-  }
+  let paymentSettings = null;
+  try {
+    paymentSettings = await context.env.DB.prepare(`SELECT payid_enabled,payid_value,payid_name,paypal_enabled,paypal_url FROM house_settings WHERE id=1`).first();
+  } catch { paymentSettings = null; }
+  const payidReady = paymentSettings
+    ? Boolean(paymentSettings.payid_enabled && (paymentSettings.payid_value || context.env.PAYID_VALUE) && (paymentSettings.payid_name || context.env.PAYID_NAME))
+    : Boolean(context.env.PAYID_VALUE && context.env.PAYID_NAME);
+  const paypalReady = Boolean(paymentSettings?.paypal_enabled && paymentSettings?.paypal_url);
+  if (!payidReady && !paypalReady) return json({ error: 'Payment options are being prepared.' }, 503);
 
   let body;
   try {

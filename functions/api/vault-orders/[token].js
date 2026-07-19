@@ -51,6 +51,12 @@ export async function onRequestGet(context) {
     }
   }
 
+  let settings = null;
+  try {
+    settings = await context.env.DB.prepare(`SELECT payid_enabled,payid_value,payid_name,paypal_enabled,paypal_url,default_payment_method FROM house_settings WHERE id=1`).first();
+  } catch { settings = null; }
+  const payidEnabled = settings ? Boolean(settings.payid_enabled) : true;
+
   return json({
     reference: order.order_reference,
     product: order.product_name,
@@ -59,8 +65,11 @@ export async function onRequestGet(context) {
     delivery_method: order.delivery_method,
     status: order.status,
     access_links: accessLinks,
-    payid: context.env.PAYID_VALUE || '',
-    payid_name: context.env.PAYID_NAME || '',
+    payid: payidEnabled ? (settings?.payid_value || context.env.PAYID_VALUE || '') : '',
+    payid_name: payidEnabled ? (settings?.payid_name || context.env.PAYID_NAME || '') : '',
+    paypal_enabled: Boolean(settings?.paypal_enabled && settings?.paypal_url),
+    paypal_url: settings?.paypal_enabled ? settings?.paypal_url || '' : '',
+    default_payment_method: settings?.default_payment_method || 'payid',
     created_at: order.created_at,
   });
 }

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#28231f">
+  <title>Settings | The House Office</title>
+  <link rel="stylesheet" href="css/office.css">
+  <link rel="stylesheet" href="css/settings-20260719.css">
+</head>
+<body>
+<div class="office-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">K</div><div><span>THE HOUSE OF</span><strong>KALLI</strong></div></div>
+    <button class="mobile-close" data-close-menu>×</button>
+    <nav>
+      <p class="nav-label">THE HOUSE</p>
+      <a class="nav-item" href="office.html"><span class="icon">⌂</span><span>House Office</span></a>
+      <a class="nav-item" href="guests.html"><span class="icon">♙</span><span>Guests</span></a>
+      <a class="nav-item" href="collections.html"><span class="icon">▣</span><span>Collections</span></a>
+      <a class="nav-item" href="orders.html"><span class="icon">◇</span><span>Orders</span></a>
+      <a class="nav-item" href="customs.html"><span class="icon">✦</span><span>Custom Requests</span></a>
+      <a class="nav-item" href="visits.html"><span class="icon">□</span><span>Visits</span></a>
+      <a class="nav-item" href="correspondence.html"><span class="icon">✉</span><span>Correspondence</span></a>
+      <a class="nav-item" href="journal.html"><span class="icon">▤</span><span>Journal</span></a>
+      <a class="nav-item" href="finances.html"><span class="icon">$</span><span>Finances</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="nav-item active" href="settings.html"><span class="icon">⚙</span><span>Settings</span></a>
+      <div class="hostess-card"><div class="avatar">K</div><div><strong>Kalli</strong><span>Hostess</span></div><span>›</span></div>
+    </div>
+  </aside>
+  <button class="backdrop" data-close-menu></button>
+  <main class="main-content">
+    <header class="topbar"><button class="mobile-menu" data-open-menu>☰</button><span class="mobile-title">Settings</span><span class="secure-label">PRIVATE OFFICE</span></header>
+    <div class="settings-wrap">
+      <header class="settings-heading"><p class="eyebrow">THE HOUSE OFFICE</p><h1>Settings</h1><p>Keep the practical details of the House in one quiet place.</p></header>
+      <div class="settings-loading" id="settings-loading">Opening your settings…</div>
+      <form id="settings-form" hidden>
+        <section class="settings-card">
+          <div class="card-heading"><div><p class="eyebrow">IDENTITY</p><h2>The House</h2></div><span>01</span></div>
+          <div class="field-grid">
+            <label><span>House name</span><input name="house_name" maxlength="100" required></label>
+            <label><span>Hostess name</span><input name="host_name" maxlength="80" required></label>
+            <label class="wide"><span>House email</span><input name="contact_email" type="email" maxlength="200" placeholder="Optional"></label>
+          </div>
+        </section>
+
+        <section class="settings-card">
+          <div class="card-heading"><div><p class="eyebrow">PAYMENTS</p><h2>How the House is paid</h2></div><span>02</span></div>
+          <div class="method-block">
+            <label class="switch-row"><span><strong>PayID</strong><small>Show PayID instructions in private order rooms.</small></span><input type="checkbox" name="payid_enabled"><i></i></label>
+            <div class="field-grid method-fields" data-payid-fields>
+              <label><span>PayID</span><input name="payid_value" maxlength="200" placeholder="Email, phone or ABN"></label>
+              <label><span>PayID name</span><input name="payid_name" maxlength="120"></label>
+            </div>
+          </div>
+          <div class="method-block">
+            <label class="switch-row"><span><strong>PayPal Business</strong><small>Offer your existing PayPal payment link as another option.</small></span><input type="checkbox" name="paypal_enabled"><i></i></label>
+            <div class="field-grid method-fields" data-paypal-fields>
+              <label class="wide"><span>PayPal payment link</span><input name="paypal_url" type="url" maxlength="500" placeholder="https://paypal.me/…"></label>
+            </div>
+          </div>
+          <label class="select-field"><span>Preferred payment method</span><select name="default_payment_method"><option value="payid">PayID</option><option value="paypal">PayPal</option></select></label>
+          <p class="help-copy">PayPal payments will appear as an option immediately. Automatic payment confirmation can be connected later without changing this page.</p>
+        </section>
+
+        <section class="settings-card">
+          <div class="card-heading"><div><p class="eyebrow">CUSTOM WORK</p><h2>Starting prices</h2></div><span>03</span></div>
+          <p class="section-copy">These prices update the public custom-request form. Final quotes always remain your decision.</p>
+          <div class="price-grid">
+            <label><span>Private rating—from</span><div class="money-input"><b>$</b><input name="custom_rating" type="number" min="0" step="1"></div></label>
+            <label><span>Personalised video—from</span><div class="money-input"><b>$</b><input name="custom_video_min" type="number" min="0" step="1"></div></label>
+            <label><span>Personalised video—to</span><div class="money-input"><b>$</b><input name="custom_video_max" type="number" min="0" step="1"></div></label>
+            <label><span>Erotic story—from</span><div class="money-input"><b>$</b><input name="custom_story" type="number" min="0" step="1"></div></label>
+            <label><span>Story + narration—from</span><div class="money-input"><b>$</b><input name="custom_narrated" type="number" min="0" step="1"></div></label>
+            <label><span>Kink or roleplay—from</span><div class="money-input"><b>$</b><input name="custom_kink" type="number" min="0" step="1"></div></label>
+          </div>
+        </section>
+
+        <section class="settings-card status-card">
+          <div class="card-heading"><div><p class="eyebrow">HOUSE ALERTS</p><h2>Notifications</h2></div><span>04</span></div>
+          <div class="status-row"><div><strong id="alert-status">Checking this device…</strong><small id="alert-copy">Orders, requests and private messages.</small></div><button type="button" id="alert-toggle">CHECKING…</button></div>
+          <p class="device-count" id="device-count"></p>
+        </section>
+
+        <section class="settings-card status-card">
+          <div class="card-heading"><div><p class="eyebrow">SECURITY</p><h2>Your private Office</h2></div><span>05</span></div>
+          <div class="security-line"><span>Office password</span><strong id="password-status">Checking…</strong></div>
+          <div class="security-line"><span>Private session</span><strong>Closes after 12 hours</strong></div>
+          <p class="help-copy">Your Office password remains encrypted in Cloudflare. It is never displayed or stored on this page.</p>
+          <button class="logout-button" id="logout-button" type="button">SIGN OUT OF THE HOUSE OFFICE</button>
+        </section>
+
+        <div class="save-bar"><p id="settings-message"></p><button type="submit">SAVE SETTINGS</button></div>
+      </form>
+    </div>
+  </main>
+</div>
+<script src="js/settings-20260719.js"></script>
+</body>
+</html>

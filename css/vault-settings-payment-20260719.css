@@ -1,4 +1,5 @@
 .paypal-instructions{margin-top:42px;padding-top:30px;border-top:1px solid rgba(242,240,236,.25)}
 .paypal-instructions>p{max-width:720px;color:#c8c3bc;font-size:17px;line-height:1.7}
 .paypal-instructions .vault-access-button{margin-top:26px}
+.paypal-instructions button.vault-access-button{width:100%;border:0;font:inherit;cursor:pointer;text-align:left}.paypal-instructions button.vault-access-button:disabled{cursor:wait;opacity:.7}
 @media(max-width:600px){.paypal-instructions>p{font-size:16px}}

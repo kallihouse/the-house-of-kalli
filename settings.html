@@ -57,13 +57,14 @@
             </div>
           </div>
           <div class="method-block">
-            <label class="switch-row"><span><strong>PayPal Business</strong><small>Offer your existing PayPal payment link as another option.</small></span><input type="checkbox" name="paypal_enabled"><i></i></label>
+            <label class="switch-row"><span><strong>PayPal Business</strong><small>Offer PayPal as a secure payment option.</small></span><input type="checkbox" name="paypal_enabled"><i></i></label>
             <div class="field-grid method-fields" data-paypal-fields>
-              <label class="wide"><span>PayPal payment link</span><input name="paypal_url" type="url" maxlength="500" placeholder="https://paypal.me/…"></label>
+              <label class="wide"><span>Fallback PayPal payment link</span><input name="paypal_url" type="url" maxlength="500" placeholder="Optional once automatic PayPal is connected"></label>
             </div>
+            <p class="connection-status"><span>Automatic confirmation</span><strong id="paypal-automatic-status">Checking…</strong></p>
           </div>
           <label class="select-field"><span>Preferred payment method</span><select name="default_payment_method"><option value="payid">PayID</option><option value="paypal">PayPal</option></select></label>
-          <p class="help-copy">PayPal payments will appear as an option immediately. Automatic payment confirmation can be connected later without changing this page.</p>
+          <p class="help-copy">Once connected, PayPal confirms the exact House order, unlocks its collection and records the income automatically.</p>
         </section>
 
         <section class="settings-card">

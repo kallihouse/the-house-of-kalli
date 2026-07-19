@@ -13,7 +13,8 @@ const fill=s=>{
   form.custom_rating.value=dollars(s.custom_rating_cents);form.custom_video_min.value=dollars(s.custom_video_min_cents);
   form.custom_video_max.value=dollars(s.custom_video_max_cents);form.custom_story.value=dollars(s.custom_story_cents);
   form.custom_narrated.value=dollars(s.custom_narrated_cents);form.custom_kink.value=dollars(s.custom_kink_cents);
-  $('#password-status').textContent=s.office_password_configured?'Protected':'Needs attention';syncMethods();
+  $('#password-status').textContent=s.office_password_configured?'Protected':'Needs attention';
+  $('#paypal-automatic-status').textContent=s.paypal_automatic_configured?'Connected':'Needs connection';syncMethods();
 };
 async function load(){
   try{const r=await fetch('/api/office-settings',{cache:'no-store'}),d=await r.json();if(!r.ok)throw Error(d.error);fill(d.settings);$('#device-count').textContent=`${d.push_devices} alert device${d.push_devices===1?'':'s'} connected.`;$('#settings-loading').hidden=true;form.hidden=false;await loadAlertStatus();}

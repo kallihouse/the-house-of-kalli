@@ -69,6 +69,7 @@ export async function onRequestGet(context) {
     payid_name: payidEnabled ? (settings?.payid_name || context.env.PAYID_NAME || '') : '',
     paypal_enabled: Boolean(settings?.paypal_enabled && settings?.paypal_url),
     paypal_url: settings?.paypal_enabled ? settings?.paypal_url || '' : '',
+    paypal_checkout_enabled: Boolean(settings?.paypal_enabled && context.env.PAYPAL_CLIENT_ID && context.env.PAYPAL_CLIENT_SECRET),
     default_payment_method: settings?.default_payment_method || 'payid',
     created_at: order.created_at,
   });

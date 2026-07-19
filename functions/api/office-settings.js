@@ -17,6 +17,7 @@ async function readSettings(env){
     payid_value:row.payid_value||env.PAYID_VALUE||'',
     payid_name:row.payid_name||env.PAYID_NAME||'',
     office_password_configured:Boolean(env.VAULT_ADMIN_SECRET),
+    paypal_automatic_configured:Boolean(env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET&&env.PAYPAL_WEBHOOK_ID),
   };
 }
 
@@ -45,7 +46,8 @@ export async function onRequestPatch({request,env}){
   };
   if(data.contact_email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contact_email))return reply({error:'Please enter a valid House email address.'},400);
   if(data.payid_enabled&&(!data.payid_value||!data.payid_name))return reply({error:'Add both the PayID and PayID name, or switch PayID off.'},400);
-  if(data.paypal_enabled){try{const url=new URL(data.paypal_url);if(url.protocol!=='https:')throw Error();}catch{return reply({error:'Please enter the full secure PayPal payment link beginning with https://.'},400)}}
+  if(data.paypal_enabled&&data.paypal_url){try{const url=new URL(data.paypal_url);if(url.protocol!=='https:')throw Error();}catch{return reply({error:'Please enter the full secure PayPal payment link beginning with https://.'},400)}}
+  if(data.paypal_enabled&&!data.paypal_url&&!(env.PAYPAL_CLIENT_ID&&env.PAYPAL_CLIENT_SECRET))return reply({error:'Add a PayPal payment link, or finish connecting automatic PayPal first.'},400);
   if(data.default_payment_method==='paypal'&&!data.paypal_enabled)return reply({error:'Switch PayPal on before making it the preferred method.'},400);
   if(data.default_payment_method==='payid'&&!data.payid_enabled)return reply({error:'Switch PayID on before making it the preferred method.'},400);
   if(data.custom_video_max_cents<data.custom_video_min_cents)return reply({error:'The personalised-video maximum must be at least the minimum.'},400);

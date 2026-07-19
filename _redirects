@@ -1,3 +1,2 @@
-/booking-request /booking-request.html 200
-/booking-return /booking-return.html 200
-/booking-room /booking-room.html 200
+/custom-request /custom-request-v2.html 302
+/custom-request.html /custom-request-v2.html 302

@@ -1,0 +1,12 @@
+@media (max-width:760px){
+  :root{--muted:#6f655d}
+  .welcome>div>p:last-child{color:#746a62}
+  .attention-card.is-clear{opacity:.88}
+  .attention-card small{color:#756b63}
+  .attention-card.is-clear b,
+  .attention-card.is-clear strong{color:#4f4842}
+  .attention-card.is-clear .card-icon{opacity:.9}
+  .quiet-note,
+  .empty-live,
+  .schedule-empty{color:#746a62}
+}

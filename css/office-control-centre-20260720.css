@@ -1,0 +1,9 @@
+.attention-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+.attention-card{min-height:138px;}
+.attention-card.booking .card-icon{background:#eee8df;color:#876142;}
+.attention-card.custom .card-icon{background:#eee8f1;color:#6f5b78;}
+.attention-card.messages .card-icon{background:#e8efeb;color:#536e5b;}
+.activity-icon.custom{background:#eee8f1;}
+.activity-icon.booking{background:#eee8df;}
+@media(max-width:760px){.attention-grid{grid-template-columns:1fr 1fr}.attention-card{min-height:142px}}
+@media(max-width:430px){.attention-grid{grid-template-columns:1fr}.attention-card{min-height:118px}}
